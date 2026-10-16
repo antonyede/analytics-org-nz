@@ -1,0 +1,1486 @@
+{
+  "started_at": "2026-10-16T22:53:38.106625+00:00",
+  "source": "https://analytics.org.nz",
+  "target": "http://127.0.0.1:8000/analytics-org-nz",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "viewports": {
+    "desktop": [
+      1440,
+      1000
+    ],
+    "tablet": [
+      834,
+      1112
+    ],
+    "mobile": [
+      390,
+      844
+    ]
+  },
+  "device_scale_factor": 1,
+  "comparisons": [
+    {
+      "source_size": [
+        1440,
+        1000
+      ],
+      "target_size": [
+        1440,
+        1000
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/",
+      "name": "home",
+      "viewport": "desktop",
+      "state": "default",
+      "source_screenshot": "desktop-home-default-source.png",
+      "target_screenshot": "desktop-home-default-target.png"
+    },
+    {
+      "source_size": [
+        1440,
+        1000
+      ],
+      "target_size": [
+        1440,
+        1000
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/",
+      "name": "home",
+      "viewport": "desktop",
+      "state": "menu-open",
+      "source_screenshot": "desktop-home-menu-open-source.png",
+      "target_screenshot": "desktop-home-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        1440,
+        1000
+      ],
+      "target_size": [
+        1440,
+        1000
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/",
+      "name": "home",
+      "viewport": "desktop",
+      "state": "form-focus",
+      "source_screenshot": "desktop-home-form-focus-source.png",
+      "target_screenshot": "desktop-home-form-focus-target.png"
+    },
+    {
+      "source_size": [
+        1440,
+        1991
+      ],
+      "target_size": [
+        1440,
+        1991
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events",
+      "name": "events",
+      "viewport": "desktop",
+      "state": "default",
+      "source_screenshot": "desktop-events-default-source.png",
+      "target_screenshot": "desktop-events-default-target.png"
+    },
+    {
+      "source_size": [
+        1440,
+        1991
+      ],
+      "target_size": [
+        1440,
+        1991
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events",
+      "name": "events",
+      "viewport": "desktop",
+      "state": "menu-open",
+      "source_screenshot": "desktop-events-menu-open-source.png",
+      "target_screenshot": "desktop-events-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        1440,
+        1991
+      ],
+      "target_size": [
+        1440,
+        1991
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events",
+      "name": "events",
+      "viewport": "desktop",
+      "state": "event-hover",
+      "source_screenshot": "desktop-events-event-hover-source.png",
+      "target_screenshot": "desktop-events-event-hover-target.png"
+    },
+    {
+      "source_size": [
+        1440,
+        1991
+      ],
+      "target_size": [
+        1440,
+        1991
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=1",
+      "name": "events-page-1",
+      "viewport": "desktop",
+      "state": "default",
+      "source_screenshot": "desktop-events-page-1-default-source.png",
+      "target_screenshot": "desktop-events-page-1-default-target.png"
+    },
+    {
+      "source_size": [
+        1440,
+        1991
+      ],
+      "target_size": [
+        1440,
+        1991
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=1",
+      "name": "events-page-1",
+      "viewport": "desktop",
+      "state": "menu-open",
+      "source_screenshot": "desktop-events-page-1-menu-open-source.png",
+      "target_screenshot": "desktop-events-page-1-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        1440,
+        2174
+      ],
+      "target_size": [
+        1440,
+        2174
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=2",
+      "name": "events-page-2",
+      "viewport": "desktop",
+      "state": "default",
+      "source_screenshot": "desktop-events-page-2-default-source.png",
+      "target_screenshot": "desktop-events-page-2-default-target.png"
+    },
+    {
+      "source_size": [
+        1440,
+        2174
+      ],
+      "target_size": [
+        1440,
+        2174
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=2",
+      "name": "events-page-2",
+      "viewport": "desktop",
+      "state": "menu-open",
+      "source_screenshot": "desktop-events-page-2-menu-open-source.png",
+      "target_screenshot": "desktop-events-page-2-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        1440,
+        2174
+      ],
+      "target_size": [
+        1440,
+        2174
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=2",
+      "name": "events-page-2",
+      "viewport": "desktop",
+      "state": "event-hover",
+      "source_screenshot": "desktop-events-page-2-event-hover-source.png",
+      "target_screenshot": "desktop-events-page-2-event-hover-target.png"
+    },
+    {
+      "source_size": [
+        1440,
+        1358
+      ],
+      "target_size": [
+        1440,
+        1358
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=3",
+      "name": "events-page-3",
+      "viewport": "desktop",
+      "state": "default",
+      "source_screenshot": "desktop-events-page-3-default-source.png",
+      "target_screenshot": "desktop-events-page-3-default-target.png"
+    },
+    {
+      "source_size": [
+        1440,
+        1358
+      ],
+      "target_size": [
+        1440,
+        1358
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=3",
+      "name": "events-page-3",
+      "viewport": "desktop",
+      "state": "menu-open",
+      "source_screenshot": "desktop-events-page-3-menu-open-source.png",
+      "target_screenshot": "desktop-events-page-3-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        1440,
+        1358
+      ],
+      "target_size": [
+        1440,
+        1358
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=3",
+      "name": "events-page-3",
+      "viewport": "desktop",
+      "state": "event-hover",
+      "source_screenshot": "desktop-events-page-3-event-hover-source.png",
+      "target_screenshot": "desktop-events-page-3-event-hover-target.png"
+    },
+    {
+      "source_size": [
+        1440,
+        1162
+      ],
+      "target_size": [
+        1440,
+        1162
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/about",
+      "name": "about",
+      "viewport": "desktop",
+      "state": "default",
+      "source_screenshot": "desktop-about-default-source.png",
+      "target_screenshot": "desktop-about-default-target.png"
+    },
+    {
+      "source_size": [
+        1440,
+        1162
+      ],
+      "target_size": [
+        1440,
+        1162
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/about",
+      "name": "about",
+      "viewport": "desktop",
+      "state": "menu-open",
+      "source_screenshot": "desktop-about-menu-open-source.png",
+      "target_screenshot": "desktop-about-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        1440,
+        1000
+      ],
+      "target_size": [
+        1440,
+        1000
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/contact",
+      "name": "contact",
+      "viewport": "desktop",
+      "state": "default",
+      "source_screenshot": "desktop-contact-default-source.png",
+      "target_screenshot": "desktop-contact-default-target.png"
+    },
+    {
+      "source_size": [
+        1440,
+        1000
+      ],
+      "target_size": [
+        1440,
+        1000
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/contact",
+      "name": "contact",
+      "viewport": "desktop",
+      "state": "menu-open",
+      "source_screenshot": "desktop-contact-menu-open-source.png",
+      "target_screenshot": "desktop-contact-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        1440,
+        1000
+      ],
+      "target_size": [
+        1440,
+        1000
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/contact",
+      "name": "contact",
+      "viewport": "desktop",
+      "state": "form-focus",
+      "source_screenshot": "desktop-contact-form-focus-source.png",
+      "target_screenshot": "desktop-contact-form-focus-target.png"
+    },
+    {
+      "source_size": [
+        1440,
+        1000
+      ],
+      "target_size": [
+        1440,
+        1000
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/privacy-policy",
+      "name": "privacy-policy",
+      "viewport": "desktop",
+      "state": "default",
+      "source_screenshot": "desktop-privacy-policy-default-source.png",
+      "target_screenshot": "desktop-privacy-policy-default-target.png"
+    },
+    {
+      "source_size": [
+        1440,
+        1000
+      ],
+      "target_size": [
+        1440,
+        1000
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/privacy-policy",
+      "name": "privacy-policy",
+      "viewport": "desktop",
+      "state": "menu-open",
+      "source_screenshot": "desktop-privacy-policy-menu-open-source.png",
+      "target_screenshot": "desktop-privacy-policy-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        1440,
+        1000
+      ],
+      "target_size": [
+        1440,
+        1000
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/sitemap.xml",
+      "name": "404",
+      "viewport": "desktop",
+      "state": "default",
+      "source_screenshot": "desktop-404-default-source.png",
+      "target_screenshot": "desktop-404-default-target.png"
+    },
+    {
+      "source_size": [
+        834,
+        1112
+      ],
+      "target_size": [
+        834,
+        1112
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/",
+      "name": "home",
+      "viewport": "tablet",
+      "state": "default",
+      "source_screenshot": "tablet-home-default-source.png",
+      "target_screenshot": "tablet-home-default-target.png"
+    },
+    {
+      "source_size": [
+        834,
+        1112
+      ],
+      "target_size": [
+        834,
+        1112
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/",
+      "name": "home",
+      "viewport": "tablet",
+      "state": "menu-open",
+      "source_screenshot": "tablet-home-menu-open-source.png",
+      "target_screenshot": "tablet-home-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        834,
+        1112
+      ],
+      "target_size": [
+        834,
+        1112
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/",
+      "name": "home",
+      "viewport": "tablet",
+      "state": "form-focus",
+      "source_screenshot": "tablet-home-form-focus-source.png",
+      "target_screenshot": "tablet-home-form-focus-target.png"
+    },
+    {
+      "source_size": [
+        834,
+        2149
+      ],
+      "target_size": [
+        834,
+        2149
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events",
+      "name": "events",
+      "viewport": "tablet",
+      "state": "default",
+      "source_screenshot": "tablet-events-default-source.png",
+      "target_screenshot": "tablet-events-default-target.png"
+    },
+    {
+      "source_size": [
+        834,
+        2149
+      ],
+      "target_size": [
+        834,
+        2149
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events",
+      "name": "events",
+      "viewport": "tablet",
+      "state": "menu-open",
+      "source_screenshot": "tablet-events-menu-open-source.png",
+      "target_screenshot": "tablet-events-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        834,
+        2149
+      ],
+      "target_size": [
+        834,
+        2149
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events",
+      "name": "events",
+      "viewport": "tablet",
+      "state": "event-hover",
+      "source_screenshot": "tablet-events-event-hover-source.png",
+      "target_screenshot": "tablet-events-event-hover-target.png"
+    },
+    {
+      "source_size": [
+        834,
+        2149
+      ],
+      "target_size": [
+        834,
+        2149
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=1",
+      "name": "events-page-1",
+      "viewport": "tablet",
+      "state": "default",
+      "source_screenshot": "tablet-events-page-1-default-source.png",
+      "target_screenshot": "tablet-events-page-1-default-target.png"
+    },
+    {
+      "source_size": [
+        834,
+        2149
+      ],
+      "target_size": [
+        834,
+        2149
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=1",
+      "name": "events-page-1",
+      "viewport": "tablet",
+      "state": "menu-open",
+      "source_screenshot": "tablet-events-page-1-menu-open-source.png",
+      "target_screenshot": "tablet-events-page-1-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        834,
+        2297
+      ],
+      "target_size": [
+        834,
+        2297
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=2",
+      "name": "events-page-2",
+      "viewport": "tablet",
+      "state": "default",
+      "source_screenshot": "tablet-events-page-2-default-source.png",
+      "target_screenshot": "tablet-events-page-2-default-target.png"
+    },
+    {
+      "source_size": [
+        834,
+        2297
+      ],
+      "target_size": [
+        834,
+        2297
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=2",
+      "name": "events-page-2",
+      "viewport": "tablet",
+      "state": "menu-open",
+      "source_screenshot": "tablet-events-page-2-menu-open-source.png",
+      "target_screenshot": "tablet-events-page-2-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        834,
+        2297
+      ],
+      "target_size": [
+        834,
+        2297
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=2",
+      "name": "events-page-2",
+      "viewport": "tablet",
+      "state": "event-hover",
+      "source_screenshot": "tablet-events-page-2-event-hover-source.png",
+      "target_screenshot": "tablet-events-page-2-event-hover-target.png"
+    },
+    {
+      "source_size": [
+        834,
+        1364
+      ],
+      "target_size": [
+        834,
+        1364
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=3",
+      "name": "events-page-3",
+      "viewport": "tablet",
+      "state": "default",
+      "source_screenshot": "tablet-events-page-3-default-source.png",
+      "target_screenshot": "tablet-events-page-3-default-target.png"
+    },
+    {
+      "source_size": [
+        834,
+        1364
+      ],
+      "target_size": [
+        834,
+        1364
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=3",
+      "name": "events-page-3",
+      "viewport": "tablet",
+      "state": "menu-open",
+      "source_screenshot": "tablet-events-page-3-menu-open-source.png",
+      "target_screenshot": "tablet-events-page-3-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        834,
+        1364
+      ],
+      "target_size": [
+        834,
+        1364
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=3",
+      "name": "events-page-3",
+      "viewport": "tablet",
+      "state": "event-hover",
+      "source_screenshot": "tablet-events-page-3-event-hover-source.png",
+      "target_screenshot": "tablet-events-page-3-event-hover-target.png"
+    },
+    {
+      "source_size": [
+        834,
+        1547
+      ],
+      "target_size": [
+        834,
+        1547
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/about",
+      "name": "about",
+      "viewport": "tablet",
+      "state": "default",
+      "source_screenshot": "tablet-about-default-source.png",
+      "target_screenshot": "tablet-about-default-target.png"
+    },
+    {
+      "source_size": [
+        834,
+        1547
+      ],
+      "target_size": [
+        834,
+        1547
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/about",
+      "name": "about",
+      "viewport": "tablet",
+      "state": "menu-open",
+      "source_screenshot": "tablet-about-menu-open-source.png",
+      "target_screenshot": "tablet-about-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        834,
+        1112
+      ],
+      "target_size": [
+        834,
+        1112
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/contact",
+      "name": "contact",
+      "viewport": "tablet",
+      "state": "default",
+      "source_screenshot": "tablet-contact-default-source.png",
+      "target_screenshot": "tablet-contact-default-target.png"
+    },
+    {
+      "source_size": [
+        834,
+        1112
+      ],
+      "target_size": [
+        834,
+        1112
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/contact",
+      "name": "contact",
+      "viewport": "tablet",
+      "state": "menu-open",
+      "source_screenshot": "tablet-contact-menu-open-source.png",
+      "target_screenshot": "tablet-contact-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        834,
+        1112
+      ],
+      "target_size": [
+        834,
+        1112
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/contact",
+      "name": "contact",
+      "viewport": "tablet",
+      "state": "form-focus",
+      "source_screenshot": "tablet-contact-form-focus-source.png",
+      "target_screenshot": "tablet-contact-form-focus-target.png"
+    },
+    {
+      "source_size": [
+        834,
+        1112
+      ],
+      "target_size": [
+        834,
+        1112
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/privacy-policy",
+      "name": "privacy-policy",
+      "viewport": "tablet",
+      "state": "default",
+      "source_screenshot": "tablet-privacy-policy-default-source.png",
+      "target_screenshot": "tablet-privacy-policy-default-target.png"
+    },
+    {
+      "source_size": [
+        834,
+        1112
+      ],
+      "target_size": [
+        834,
+        1112
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/privacy-policy",
+      "name": "privacy-policy",
+      "viewport": "tablet",
+      "state": "menu-open",
+      "source_screenshot": "tablet-privacy-policy-menu-open-source.png",
+      "target_screenshot": "tablet-privacy-policy-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        834,
+        1112
+      ],
+      "target_size": [
+        834,
+        1112
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/sitemap.xml",
+      "name": "404",
+      "viewport": "tablet",
+      "state": "default",
+      "source_screenshot": "tablet-404-default-source.png",
+      "target_screenshot": "tablet-404-default-target.png"
+    },
+    {
+      "source_size": [
+        390,
+        929
+      ],
+      "target_size": [
+        390,
+        929
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/",
+      "name": "home",
+      "viewport": "mobile",
+      "state": "default",
+      "source_screenshot": "mobile-home-default-source.png",
+      "target_screenshot": "mobile-home-default-target.png"
+    },
+    {
+      "source_size": [
+        390,
+        929
+      ],
+      "target_size": [
+        390,
+        929
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/",
+      "name": "home",
+      "viewport": "mobile",
+      "state": "menu-open",
+      "source_screenshot": "mobile-home-menu-open-source.png",
+      "target_screenshot": "mobile-home-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        390,
+        929
+      ],
+      "target_size": [
+        390,
+        929
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/",
+      "name": "home",
+      "viewport": "mobile",
+      "state": "form-focus",
+      "source_screenshot": "mobile-home-form-focus-source.png",
+      "target_screenshot": "mobile-home-form-focus-target.png"
+    },
+    {
+      "source_size": [
+        390,
+        2695
+      ],
+      "target_size": [
+        390,
+        2695
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events",
+      "name": "events",
+      "viewport": "mobile",
+      "state": "default",
+      "source_screenshot": "mobile-events-default-source.png",
+      "target_screenshot": "mobile-events-default-target.png"
+    },
+    {
+      "source_size": [
+        390,
+        2695
+      ],
+      "target_size": [
+        390,
+        2695
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events",
+      "name": "events",
+      "viewport": "mobile",
+      "state": "menu-open",
+      "source_screenshot": "mobile-events-menu-open-source.png",
+      "target_screenshot": "mobile-events-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        390,
+        2695
+      ],
+      "target_size": [
+        390,
+        2695
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events",
+      "name": "events",
+      "viewport": "mobile",
+      "state": "event-hover",
+      "source_screenshot": "mobile-events-event-hover-source.png",
+      "target_screenshot": "mobile-events-event-hover-target.png"
+    },
+    {
+      "source_size": [
+        390,
+        2695
+      ],
+      "target_size": [
+        390,
+        2695
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=1",
+      "name": "events-page-1",
+      "viewport": "mobile",
+      "state": "default",
+      "source_screenshot": "mobile-events-page-1-default-source.png",
+      "target_screenshot": "mobile-events-page-1-default-target.png"
+    },
+    {
+      "source_size": [
+        390,
+        2695
+      ],
+      "target_size": [
+        390,
+        2695
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=1",
+      "name": "events-page-1",
+      "viewport": "mobile",
+      "state": "menu-open",
+      "source_screenshot": "mobile-events-page-1-menu-open-source.png",
+      "target_screenshot": "mobile-events-page-1-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        390,
+        2745
+      ],
+      "target_size": [
+        390,
+        2745
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=2",
+      "name": "events-page-2",
+      "viewport": "mobile",
+      "state": "default",
+      "source_screenshot": "mobile-events-page-2-default-source.png",
+      "target_screenshot": "mobile-events-page-2-default-target.png"
+    },
+    {
+      "source_size": [
+        390,
+        2745
+      ],
+      "target_size": [
+        390,
+        2745
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=2",
+      "name": "events-page-2",
+      "viewport": "mobile",
+      "state": "menu-open",
+      "source_screenshot": "mobile-events-page-2-menu-open-source.png",
+      "target_screenshot": "mobile-events-page-2-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        390,
+        2745
+      ],
+      "target_size": [
+        390,
+        2745
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=2",
+      "name": "events-page-2",
+      "viewport": "mobile",
+      "state": "event-hover",
+      "source_screenshot": "mobile-events-page-2-event-hover-source.png",
+      "target_screenshot": "mobile-events-page-2-event-hover-target.png"
+    },
+    {
+      "source_size": [
+        390,
+        1413
+      ],
+      "target_size": [
+        390,
+        1413
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=3",
+      "name": "events-page-3",
+      "viewport": "mobile",
+      "state": "default",
+      "source_screenshot": "mobile-events-page-3-default-source.png",
+      "target_screenshot": "mobile-events-page-3-default-target.png"
+    },
+    {
+      "source_size": [
+        390,
+        1413
+      ],
+      "target_size": [
+        390,
+        1413
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=3",
+      "name": "events-page-3",
+      "viewport": "mobile",
+      "state": "menu-open",
+      "source_screenshot": "mobile-events-page-3-menu-open-source.png",
+      "target_screenshot": "mobile-events-page-3-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        390,
+        1413
+      ],
+      "target_size": [
+        390,
+        1413
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/events?522c7db6_page=3",
+      "name": "events-page-3",
+      "viewport": "mobile",
+      "state": "event-hover",
+      "source_screenshot": "mobile-events-page-3-event-hover-source.png",
+      "target_screenshot": "mobile-events-page-3-event-hover-target.png"
+    },
+    {
+      "source_size": [
+        390,
+        3269
+      ],
+      "target_size": [
+        390,
+        3269
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/about",
+      "name": "about",
+      "viewport": "mobile",
+      "state": "default",
+      "source_screenshot": "mobile-about-default-source.png",
+      "target_screenshot": "mobile-about-default-target.png"
+    },
+    {
+      "source_size": [
+        390,
+        3269
+      ],
+      "target_size": [
+        390,
+        3269
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/about",
+      "name": "about",
+      "viewport": "mobile",
+      "state": "menu-open",
+      "source_screenshot": "mobile-about-menu-open-source.png",
+      "target_screenshot": "mobile-about-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        390,
+        902
+      ],
+      "target_size": [
+        390,
+        902
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/contact",
+      "name": "contact",
+      "viewport": "mobile",
+      "state": "default",
+      "source_screenshot": "mobile-contact-default-source.png",
+      "target_screenshot": "mobile-contact-default-target.png"
+    },
+    {
+      "source_size": [
+        390,
+        902
+      ],
+      "target_size": [
+        390,
+        902
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/contact",
+      "name": "contact",
+      "viewport": "mobile",
+      "state": "menu-open",
+      "source_screenshot": "mobile-contact-menu-open-source.png",
+      "target_screenshot": "mobile-contact-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        390,
+        902
+      ],
+      "target_size": [
+        390,
+        902
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/contact",
+      "name": "contact",
+      "viewport": "mobile",
+      "state": "form-focus",
+      "source_screenshot": "mobile-contact-form-focus-source.png",
+      "target_screenshot": "mobile-contact-form-focus-target.png"
+    },
+    {
+      "source_size": [
+        390,
+        1081
+      ],
+      "target_size": [
+        390,
+        1081
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/privacy-policy",
+      "name": "privacy-policy",
+      "viewport": "mobile",
+      "state": "default",
+      "source_screenshot": "mobile-privacy-policy-default-source.png",
+      "target_screenshot": "mobile-privacy-policy-default-target.png"
+    },
+    {
+      "source_size": [
+        390,
+        1081
+      ],
+      "target_size": [
+        390,
+        1081
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/privacy-policy",
+      "name": "privacy-policy",
+      "viewport": "mobile",
+      "state": "menu-open",
+      "source_screenshot": "mobile-privacy-policy-menu-open-source.png",
+      "target_screenshot": "mobile-privacy-policy-menu-open-target.png"
+    },
+    {
+      "source_size": [
+        390,
+        844
+      ],
+      "target_size": [
+        390,
+        844
+      ],
+      "size_match": true,
+      "different_pixels": 0,
+      "different_percent": 0.0,
+      "mean_channel_delta": 0.0,
+      "difference_bounds": null,
+      "exact_pixels": true,
+      "route": "/sitemap.xml",
+      "name": "404",
+      "viewport": "mobile",
+      "state": "default",
+      "source_screenshot": "mobile-404-default-source.png",
+      "target_screenshot": "mobile-404-default-target.png"
+    }
+  ],
+  "network_errors": [],
+  "console_errors": [],
+  "browser": "154.0.8037.57",
+  "finished_at": "2026-10-16T22:58:33.058054+00:00",
+  "summary": {
+    "comparisons": 66,
+    "exact": 66,
+    "network_errors": 0,
+    "console_errors": 0
+  },
+  "comparison_method": "Every RGB channel, zero tolerance, no masking; dimensions must match"
+}

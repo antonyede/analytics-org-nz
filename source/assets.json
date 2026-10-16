@@ -1,0 +1,247 @@
+{
+  "https://fonts.googleapis.com/css?family=Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic": {
+    "path": "assets/9d4b4102ffb2-montserrat.css",
+    "sha256": "655c54a113e02233c15cdc1f3cd65367d0fd11ea179649ff392011a3d5d82365",
+    "bytes": 32112
+  },
+  "https://fonts.gstatic.com/s/montserrat/v31/JTUQjIg1_i6t8kCHKm459WxRxC7mw9c.woff2": {
+    "path": "assets/f9c1616c4a7e-JTUQjIg1_i6t8kCHKm459WxRxC7mw9c.woff2",
+    "sha256": "eaf57cf096f40598c99a9270dc232a0905833fc05aa38a7a93ad8801bde38960",
+    "bytes": 26944
+  },
+  "https://fonts.gstatic.com/s/montserrat/v31/JTUQjIg1_i6t8kCHKm459WxRzS7mw9c.woff2": {
+    "path": "assets/24b699a0097d-JTUQjIg1_i6t8kCHKm459WxRzS7mw9c.woff2",
+    "sha256": "f44e7241c210c6938410dadc5806bb33e8f526a28a0fdcf58c41b33bcc55321b",
+    "bytes": 24536
+  },
+  "https://fonts.gstatic.com/s/montserrat/v31/JTUQjIg1_i6t8kCHKm459WxRxi7mw9c.woff2": {
+    "path": "assets/eea80a133e09-JTUQjIg1_i6t8kCHKm459WxRxi7mw9c.woff2",
+    "sha256": "cfc214072c52df3721890638bf0dcd8a5a0e2c99653d59b4b766ab867da05b4c",
+    "bytes": 13900
+  },
+  "https://fonts.gstatic.com/s/montserrat/v31/JTUQjIg1_i6t8kCHKm459WxRxy7mw9c.woff2": {
+    "path": "assets/57e06cc75c58-JTUQjIg1_i6t8kCHKm459WxRxy7mw9c.woff2",
+    "sha256": "9f7c3dc0c1fdbc8b09d53d1beb4aca048a5aff376ac5423878e03e83e89a7fe8",
+    "bytes": 74892
+  },
+  "https://fonts.gstatic.com/s/montserrat/v31/JTUQjIg1_i6t8kCHKm459WxRyS7m.woff2": {
+    "path": "assets/caa72ea0843e-JTUQjIg1_i6t8kCHKm459WxRyS7m.woff2",
+    "sha256": "0eb22e3d769a66a92dbd82e3aefa5740e5bc21afa4485f62f92b22656d49182a",
+    "bytes": 39632
+  },
+  "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2": {
+    "path": "assets/146f3021cd2f-JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2",
+    "sha256": "0f7f5f2fbb4eae126790fe6f01659ab3ee0806e8038a941908e893020569f51a",
+    "bytes": 26368
+  },
+  "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2": {
+    "path": "assets/d786a4e09dec-JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2",
+    "sha256": "a187b077090fe8ae3fd2d7496aabbeae604819c718a282e0afc92df72b450766",
+    "bytes": 23828
+  },
+  "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2": {
+    "path": "assets/17446c0dad4e-JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2",
+    "sha256": "26b2403f995ed65fb49037a6498c074d3ec3c36031a69fc368c4c2180e2c01fa",
+    "bytes": 12928
+  },
+  "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2": {
+    "path": "assets/e4fe21c0cb95-JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2",
+    "sha256": "54d9a78b7ff60b689ad9f3017ffac8547b5d871afec733f6c1c3ae36577ee504",
+    "bytes": 70688
+  },
+  "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2": {
+    "path": "assets/3dac51d0c0ab-JTUSjIg1_i6t8kCHKm459Wlhyw.woff2",
+    "sha256": "06b16db7a969135d48d38c49183be7fb88d4452e2a3011957c7851941f4e4879",
+    "bytes": 37956
+  },
+  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/css/nz-data-science-analytics-forum.shared.c3cb3bc50.css": {
+    "path": "assets/4725f0d5b664-nz-data-science-analytics-forum.shared.c3cb3bc50.css",
+    "sha256": "c4e4651104c9452b2087f080da3f97321d42a6e624f3565da6166730806606ea",
+    "bytes": 68508
+  },
+  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/603c1aa475a6f409863bc36a_HKGrotesk-Light.woff": {
+    "path": "assets/cea7ab9d29e6-603c1aa475a6f409863bc36a_HKGrotesk-Light.woff",
+    "sha256": "94c5747deca951133a02b84ea2ef3a586585089a0cb7e88d107c16fc6bf425e6",
+    "bytes": 38444
+  },
+  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/603c1aa4496482bce4bc608b_HKGrotesk-Medium.woff": {
+    "path": "assets/2a4ed2223736-603c1aa4496482bce4bc608b_HKGrotesk-Medium.woff",
+    "sha256": "f4619805c21585b24ffb09185875fc4216d22ecd7e4e0dcbe17983a6cf850404",
+    "bytes": 38584
+  },
+  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/603c1aa4e1c145d684d6b9df_HKGrotesk-Regular.woff": {
+    "path": "assets/fbb0ef2a490c-603c1aa4e1c145d684d6b9df_HKGrotesk-Regular.woff",
+    "sha256": "33224e297e1fafe392749148605d3264d5bc113218ce6ae55fa94913f5ecb1b0",
+    "bytes": 38568
+  },
+  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/603c1aa4e1c145091ed6b9de_HKGrotesk-LightItalic.woff": {
+    "path": "assets/88f96a399c73-603c1aa4e1c145091ed6b9de_HKGrotesk-LightItalic.woff",
+    "sha256": "5b09c791b90e0d8b7a6165af995f36b5f49bed55359cf12d0988888f6924ee71",
+    "bytes": 39696
+  },
+  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/603c1aa49664716707dd2600_HKGrotesk-MediumItalic.woff": {
+    "path": "assets/d0fb07484d17-603c1aa49664716707dd2600_HKGrotesk-MediumItalic.woff",
+    "sha256": "f8b42a16a3b0775f669dde03c46a9c5fa0937074e5a635303ea02a24e4d8d2f0",
+    "bytes": 39776
+  },
+  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/603c1aa4ba16f8e2cd51a555_HKGrotesk-SemiBoldItalic.woff": {
+    "path": "assets/17c2602cefbf-603c1aa4ba16f8e2cd51a555_HKGrotesk-SemiBoldItalic.woff",
+    "sha256": "839635932ab953ab99418ec59e4894c2d18b61be1b8f8856ab929b5c08d66cd8",
+    "bytes": 40004
+  },
+  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/603c1aa5e1c145939fd6b9e0_HKGrotesk-SemiBold.woff": {
+    "path": "assets/fc80f3b04588-603c1aa5e1c145939fd6b9e0_HKGrotesk-SemiBold.woff",
+    "sha256": "cad1c763957d2e15ac085920136db87a011ff1c99ae41e7fc7b844d4cc0cdd08",
+    "bytes": 38516
+  },
+  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/603c1aa5995048695ea309b9_HKGrotesk-Bold.woff": {
+    "path": "assets/991a827a5b63-603c1aa5995048695ea309b9_HKGrotesk-Bold.woff",
+    "sha256": "23c4b2d46bbacd1bf0e9360d0d58ab2155489fb00b6775a8b5259f8322a2cba1",
+    "bytes": 37716
+  },
+  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/603c1aa4aae3c1acd95446ce_HKGrotesk-BoldItalic.woff": {
+    "path": "assets/f9274a1feddf-603c1aa4aae3c1acd95446ce_HKGrotesk-BoldItalic.woff",
+    "sha256": "04aa7851f19f4465810b66451a977c33243caf903b7c439837a99c26842bc469",
+    "bytes": 38980
+  },
+  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/603c1aa5ba16f8652e51a556_HKGrotesk-Italic.woff": {
+    "path": "assets/7f3d49ff0879-603c1aa5ba16f8652e51a556_HKGrotesk-Italic.woff",
+    "sha256": "fcdb2f47381a9a57b01676645f40393866da0a930eacddd1417598bb62df542b",
+    "bytes": 39720
+  },
+  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/603d50372e21fb80ac20ec6c_Zavy_logo_white.svg": {
+    "path": "assets/be40e6dbb3d4-603d50372e21fb80ac20ec6c_Zavy_logo_white.svg",
+    "sha256": "a7cfe3b2e0a3d84a66bfc2f782b7ecef45518fcf53682d350a235b7d26f27f92",
+    "bytes": 155351
+  },
+  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/604a9b9ca6202b58476a6929_favicon.jpg": {
+    "path": "assets/9566134d7737-604a9b9ca6202b58476a6929_favicon.jpg",
+    "sha256": "c45fcfec3a856695f4a41edecd18e969ec290d1abc5a8f91ffe23b51d34736c9",
+    "bytes": 11809
+  },
+  "https://cdn.prod.website-files.com/img/webclip.png": {
+    "path": "assets/b339bf500db7-webclip.png",
+    "sha256": "c305e6b8ea9916705eec8eb8c281561d907fdaa0c84f3dbe7b65dac9e2ddf993",
+    "bytes": 4807
+  },
+  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/603c49036a41f46c41aac981_NZDatalogo-02.svg": {
+    "path": "assets/dd34048df54b-603c49036a41f46c41aac981_NZDatalogo-02.svg",
+    "sha256": "9f712b9233e6baf3cad65abd2fe3655939aeb7957729c2de35ce5612f21e2d3f",
+    "bytes": 5726
+  },
+  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/603d5b8b664b3525eaae036c_NZDatalogo-04.svg": {
+    "path": "assets/960d0a068529-603d5b8b664b3525eaae036c_NZDatalogo-04.svg",
+    "sha256": "8a142cdaa7fb81b26d54b7f631e911c1e4102ae1bd068eae1d963ed929829991",
+    "bytes": 1666
+  },
+  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/603d5b8bf86ef6450e15e181_NZDatalogo-05.svg": {
+    "path": "assets/bf38a2ae7704-603d5b8bf86ef6450e15e181_NZDatalogo-05.svg",
+    "sha256": "4e59eea75a9b4760e2c6b92e54a475ef60c147618bd01beb532522635bc88da1",
+    "bytes": 1787
+  },
+  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/603d5b8beb038bef15fd1df3_NZDatalogo-06.svg": {
+    "path": "assets/1d461cb97fb8-603d5b8beb038bef15fd1df3_NZDatalogo-06.svg",
+    "sha256": "e9cf22ae5ca58839fd449cfa32c79ec8828518b48ec0615663c2e2b4ee59e36b",
+    "bytes": 1340
+  },
+  "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=603c1984e4f2732b57499254": {
+    "path": "assets/dded13cf9167-jquery-3.5.1.min.dc5e7f18c8.js",
+    "sha256": "f7f6a5894f1d19ddad6fa392b2ece2c5e578cbf7da4ea805b6885eb6985b6e3d",
+    "bytes": 89476
+  },
+  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/js/nz-data-science-analytics-forum.schunk.36b8fb49256177c8.js": {
+    "path": "assets/affd7a1fd510-nz-data-science-analytics-forum.schunk.36b8fb49256177c8.js",
+    "sha256": "8b7d0de9f3df9103d70ed000c17b348240623ac4e4053d56fa0d5cfd8d74d79d",
+    "bytes": 41429
+  },
+  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/js/nz-data-science-analytics-forum.schunk.d4dcdb6112ee091b.js": {
+    "path": "assets/81a345f0d237-nz-data-science-analytics-forum.schunk.d4dcdb6112ee091b.js",
+    "sha256": "90ca937e1d5e280df1db4aa5982deed6751c86f6478d2fa721076d2c2fad8d40",
+    "bytes": 124756
+  },
+  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/js/nz-data-science-analytics-forum.11f7641f.9aa8aea360bb1dca.js": {
+    "path": "assets/9caaf141a224-nz-data-science-analytics-forum.11f7641f.9aa8aea360bb1dca.js",
+    "sha256": "1edf20f1ce23ba05e84e75931a99194ce5321b191976a2a28f6b0e69f0e2bc50",
+    "bytes": 11308
+  },
+  "https://cdn.prod.website-files.com/static/page-not-found.211a85e40c.svg": {
+    "path": "assets/bbc98f52aacd-page-not-found.211a85e40c.svg",
+    "sha256": "58afd37317e5adb23a1e2b5006169e2350cdbc8948ee7998250fce897f3fb699",
+    "bytes": 754
+  },
+  "https://cdn.prod.website-files.com/603d933686a4d4297e3f3b58/604f165b2c8e121da55ebf41_1615242064860.jpeg": {
+    "path": "assets/8b8ea6bc1534-604f165b2c8e121da55ebf41_1615242064860.jpeg",
+    "sha256": "1a544c5f72c7be05d524c802400c4967235cb7e3c0ca6ad4dd7edce6a00dbc91",
+    "bytes": 19677
+  },
+  "https://cdn.prod.website-files.com/603d933686a4d4297e3f3b58/604f137d991ee10687d98055_1542526523082.jpeg": {
+    "path": "assets/68461e874081-604f137d991ee10687d98055_1542526523082.jpeg",
+    "sha256": "f6d3c2dca1faf36dfabe09e5a642cd75e25338cea293403d8836bbbd65281876",
+    "bytes": 37781
+  },
+  "https://cdn.prod.website-files.com/603d933686a4d4297e3f3b58/604f140eab967a12a322d70f_AJM.jpg": {
+    "path": "assets/60a03fa933aa-604f140eab967a12a322d70f_AJM.jpg",
+    "sha256": "63175795423dad1ea7b006057fd2c9e0a613e9316de6cc746ec65d2dea50f3e6",
+    "bytes": 5971
+  },
+  "https://cdn.prod.website-files.com/603d933686a4d4297e3f3b58/604f14b5be2117618ea7c2a4_1517762956825.jpeg": {
+    "path": "assets/7e9320b9b4f7-604f14b5be2117618ea7c2a4_1517762956825.jpeg",
+    "sha256": "e9b7772cce969b34754baff33074ce719ccfb2f84ccdde0b0d8c34d57e4a77aa",
+    "bytes": 11263
+  },
+  "https://cdn.prod.website-files.com/603d933686a4d4297e3f3b58/64f4f6c7a202a747776a564c_LinkedIn%20Profile%20Pic.png": {
+    "path": "assets/9ea144c44192-64f4f6c7a202a747776a564c_LinkedIn_Profile_Pic.png",
+    "sha256": "9fb937103ca0375825133504e953d87e60d8b7b5dda601c05c94efa28044b5d7",
+    "bytes": 308159
+  },
+  "https://cdn.prod.website-files.com/603d933686a4d4297e3f3b58/64f4f6c7a202a747776a564c_LinkedIn%20Profile%20Pic-p-500.png": {
+    "path": "assets/3a1ebc07506b-64f4f6c7a202a747776a564c_LinkedIn_Profile_Pic-p-500.png",
+    "sha256": "061d38be438ba12f6dc06a970a20059c86462462ff25b8d26e9017a18083baba",
+    "bytes": 66223
+  },
+  "https://cdn.prod.website-files.com/603d933686a4d4297e3f3b58/68660274ec141a42d3056aa2_IEEE%20photo_rf_levels.jpg": {
+    "path": "assets/e81a07ee1033-68660274ec141a42d3056aa2_IEEE_photo_rf_levels.jpg",
+    "sha256": "ce1046fdb4ea01e3d52d51c66ebf826f748c6b516b2302940ce2c49163d296b2",
+    "bytes": 64262
+  },
+  "https://cdn.prod.website-files.com/603d933686a4d4297e3f3b58/68660274ec141a42d3056aa2_IEEE%20photo_rf_levels-p-500.jpg": {
+    "path": "assets/b099910ef78f-68660274ec141a42d3056aa2_IEEE_photo_rf_levels-p-500.jpg",
+    "sha256": "26b0de453ada2015f045a8a872605367a0ebeeb54d1ac597c8cea77699f2ade5",
+    "bytes": 27399
+  },
+  "https://cdn.prod.website-files.com/603d933686a4d4297e3f3b58/68660c853c8b22191d4172d4_chris-reid.jpg": {
+    "path": "assets/0e6e2ad3ca78-68660c853c8b22191d4172d4_chris-reid.jpg",
+    "sha256": "6c977936a1565fde3749387c0d270bf3f51e4fc0bcfb6b894d812fb7e9ca2656",
+    "bytes": 28313
+  },
+  "https://cdn.prod.website-files.com/603d933686a4d4297e3f3b58/68660ce0e49209cca6a6ac94_shane-ross.jpg": {
+    "path": "assets/f846f7126f2d-68660ce0e49209cca6a6ac94_shane-ross.jpg",
+    "sha256": "11760f527aad8887a3811c05fbae673868d55877cb4f036b533885d6d6c2102d",
+    "bytes": 23835
+  },
+  "https://cdn.prod.website-files.com/603d933686a4d4297e3f3b58/6a87dabfcdfb9d3c37972944_OliverStevenson%20(Medium).png": {
+    "path": "assets/6b35fc655c5f-6a87dabfcdfb9d3c37972944_OliverStevenson__Medium_.png",
+    "sha256": "5446485c0c8dc1311caacc3327fc27f2230136854ffd35e4c9e73ce9cfbbd227",
+    "bytes": 545682
+  },
+  "https://cdn.prod.website-files.com/603d933686a4d4297e3f3b58/6a87dabfcdfb9d3c37972944_OliverStevenson%20(Medium)-p-500.png": {
+    "path": "assets/c82645884f0a-6a87dabfcdfb9d3c37972944_OliverStevenson__Medium_-p-500.png",
+    "sha256": "f591e2660c62f6eb29a637300c49a1e23367ec670ef01e9d99a2d5223ffd9913",
+    "bytes": 90399
+  },
+  "https://cdn.prod.website-files.com/603d933686a4d4297e3f3b58/6aa35ad008d6a6ee1d0db967_Sara.png": {
+    "path": "assets/62b4165fa2c8-6aa35ad008d6a6ee1d0db967_Sara.png",
+    "sha256": "0b5c5b6a751d76ea0d9aac65b3ad157b900369b1d35b5e37bd95a1802b494b99",
+    "bytes": 165674
+  },
+  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/js/nz-data-science-analytics-forum.7ff4b63f.653cb05def60523e.js": {
+    "path": "assets/4e298c8fa8e6-nz-data-science-analytics-forum.7ff4b63f.653cb05def60523e.js",
+    "sha256": "61a6f0383c43537f4612c98a86480e5f2595e6c655a2f8900d9b26b6333a1279",
+    "bytes": 1830
+  },
+  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/603c1984e4f273c3b0499282_Group%2031.svg": {
+    "path": "assets/45077b3589bc-603c1984e4f273c3b0499282_Group_31.svg",
+    "sha256": "0f3bb7be7b9776107a740266b3c0ee1c9fd1d7245b45c4a86597373a9b0bd8b9",
+    "bytes": 318
+  }
+}
