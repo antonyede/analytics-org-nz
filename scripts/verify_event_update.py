@@ -63,11 +63,10 @@ def main():
                         images=page.locator('main .collection-list-wrapper-2 .event-thumbnail').evaluate_all('(xs)=>xs.map(x=>x.getAttribute("src"))')
                         assert images==['/analytics-org-nz/'+item['image_path'] for item in expected_records if item.get('image_path')],route
                         assert page.locator('main .collection-list-wrapper .w-dyn-item').count()==len(upcoming)
-                        assert page.locator('.event-sync-note').get_attribute('data-last-sync')==data['synced_at']
-                    assert page.locator('.event-sync-note').is_visible()
-                    assert page.locator('.event-sync-note a').get_attribute('href').endswith('18441294721')
+                    assert page.locator('.event-sync-note').count()==0
+                    assert 'Events last verified on' not in page.locator('main').inner_text()
+                    assert page.get_by_role('link',name='View the latest on Eventbrite',exact=True).count()==0
                     if not data:
-                        assert 'not connected' in page.locator('.event-sync-note').inner_text()
                         fallback=page.locator('main .collection-list-wrapper .w-dyn-empty a')
                         assert fallback.is_visible()
                         assert fallback.evaluate('(x)=>getComputedStyle(x).color')=='rgb(101, 101, 101)'

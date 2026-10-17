@@ -1,4 +1,4 @@
-"""Render verified API data, or label the preserved migration archive honestly."""
+"""Render verified API events, with the preserved migration archive as fallback."""
 import copy
 from datetime import datetime, timezone
 import json
@@ -21,27 +21,9 @@ def split_events(events, now=None):
     return sorted(upcoming, key=lambda e:e['start_utc']), sorted(past, key=lambda e:e['start_utc'], reverse=True)
 
 
-def note(soup, status, dataset, base):
-    main = soup.select_one('main')
-    current = main.select_one('.collection-list-wrapper')
-    paragraph = soup.new_tag('p', attrs={'class':'event-sync-note', 'role':'status'})
-    last = (dataset or {}).get('synced_at')
-    paragraph['data-last-sync'] = last or ''
-    paragraph['data-sync-result'] = status.get('result','blocked')
-    if not last:
-        message = 'Automatic event updates are not connected yet. Showing the preserved event archive. '
-    elif status.get('result') != 'success':
-        message = 'The latest event update failed. Showing events last verified on ' + last + '. '
-    else:
-        message = 'Events last verified on ' + last + '. Updated daily. '
-    paragraph.append(message)
-    link = soup.new_tag('a', href=ORGANIZER_URL, target='_blank', rel='noopener')
-    link.string = 'View the latest on Eventbrite'
-    paragraph.append(link)
-    # Before the Current Events heading, inside its existing content column.
-    heading = current.find_previous_sibling()
-    (heading if heading else current).insert_before(paragraph)
-    if not last:
+def add_event_support(soup, dataset, base):
+    if not (dataset or {}).get('synced_at'):
+        current = soup.select_one('main .collection-list-wrapper')
         empty = current.select_one('.w-dyn-empty')
         if empty:
             empty.clear()
@@ -50,7 +32,6 @@ def note(soup, status, dataset, base):
             empty.append(link)
     stylesheet = soup.new_tag('link', rel='stylesheet', href=base+'/events-sync.css')
     soup.head.append(stylesheet)
-    soup.body.append(soup.new_tag('script', src=base+'/events-sync.js'))
 
 
 def card(template, event, soup, base):
@@ -147,7 +128,7 @@ def prepare_event_pages(pages, base, root=ROOT):
                 link.string = f'Events page {target}'
                 fallback.append(link)
                 fallback.append(' ')
-        note(soup,status,dataset,base)
+        add_event_support(soup,dataset,base)
         pages[EVENTS_URL + (f'?522c7db6_page={number}' if number > 1 else '')] = soup
     output = root/'docs/event-sync-status.json'
     output.parent.mkdir(parents=True,exist_ok=True)

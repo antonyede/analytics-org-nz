@@ -1,5 +1,3 @@
-.event-sync-note { color: #656565; font-family: Hkgrotesk, sans-serif; font-size: 14px; line-height: 1.5; margin: 0 0 24px; }
-.event-sync-note a { color: inherit; text-decoration: underline; }
 .collection-list-wrapper .w-dyn-empty a { color: #656565; text-decoration: underline; }
 .event-item-content { display: flex; align-items: flex-start; gap: 18px; }
 .event-item-content > .grid { flex: 1; min-width: 0; }

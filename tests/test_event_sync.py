@@ -212,6 +212,9 @@ class SyncTests(unittest.TestCase):
             self.assertIsNone(variants[1].select_one('.event-name script'))
             self.assertEqual(len(variants[1].select('.event-thumbnail')),1)
             self.assertIn('September 10, 2026',variants[1].get_text())
+            for variant in variants.values():
+                self.assertIsNone(variant.select_one('.event-sync-note'))
+                self.assertNotIn('View the latest on Eventbrite',variant.get_text())
 
 
 if __name__ == '__main__':unittest.main()
