@@ -1,0 +1,79 @@
+name: Sync Eventbrite events
+
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+    inputs:
+      allow_large_decrease:
+        description: Allow a reviewed decrease of more than half the event count (empty feeds still rejected)
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: eventbrite-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: main
+          fetch-depth: 1
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Install pinned build dependencies
+        run: python -m pip install -r requirements-sync.txt
+      - name: Test validation and last-known-good retention
+        run: python -m unittest discover -s tests -v
+      - name: Fetch and validate all public organiser events
+        id: events
+        continue-on-error: true
+        env:
+          EVENTBRITE_TOKEN: ${{ secrets.EVENTBRITE_TOKEN }}
+          EVENTBRITE_ORGANIZATION_ID: ${{ vars.EVENTBRITE_ORGANIZATION_ID }}
+          ALLOW_LARGE_DECREASE: ${{ inputs.allow_large_decrease }}
+        run: |
+          args=()
+          if [ "$ALLOW_LARGE_DECREASE" = "true" ]; then args+=(--allow-large-decrease); fi
+          python scripts/sync_events.py "${args[@]}"
+      - name: Build events with last-known-good data and freshness notice
+        run: python scripts/build.py --events-only
+      - name: Record safe diagnostics
+        if: always()
+        run: |
+          if [ -f data/event-sync-status.json ]; then
+            printf '## Eventbrite sync status\n\n```json\n' >> "$GITHUB_STEP_SUMMARY"
+            cat data/event-sync-status.json >> "$GITHUB_STEP_SUMMARY"
+            printf '\n```\n' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Commit only generated event data and request Pages rebuild
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          git fetch origin main --depth=1
+          test "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)"
+          git add -- data docs/events docs/event-sync-status.json
+          if [ -d docs/assets/eventbrite ]; then git add -- docs/assets/eventbrite; fi
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Update verified events and sync status'
+            git push origin HEAD:main
+            # GITHUB_TOKEN commits do not trigger legacy Pages builds themselves.
+            gh api --method POST "repos/$GH_REPO/pages/builds" --silent
+          fi
+      - name: Fail visibly when Eventbrite sync is blocked or unsuccessful
+        if: steps.events.outcome != 'success'
+        run: |
+          echo 'Eventbrite sync did not succeed. Preserved event data and published safe status; inspect the job summary.'
+          exit 1
