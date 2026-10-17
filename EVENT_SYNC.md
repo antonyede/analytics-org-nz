@@ -2,9 +2,9 @@
 
 The contact page now uses a visible `mailto:hello@analytics.org.nz` link instead of the contact form. The separate Mailchimp newsletter embeds are unchanged. No emails or subscriptions were sent.
 
-## Current feed status
+## Feed status at verification — 17 October 2026
 
-**No authenticated Eventbrite sync has succeeded yet.** There are **0 API-synchronised events**, no last-success timestamp, and the original **25 archived events** remain available. The Events page explicitly labels that archive and links to the organiser for the latest events. The machine-readable [sync status](docs/event-sync-status.json) records the latest attempt and exact failure code; the public page never presents that failed attempt as a successful update.
+**At this verification, no authenticated Eventbrite sync had succeeded.** There were **0 API-synchronised events**, no last-success timestamp, and the original **25 archived events** remained available. The Events page labels that archive and links to the organiser for the latest events. The [live machine-readable status](https://antonyede.github.io/analytics-org-nz/event-sync-status.json) is authoritative for subsequent attempts and successes; the public page never presents a failed attempt as a successful update.
 
 The required access is an existing authorised Eventbrite API OAuth/private token, stored in this repository's Actions secret **`EVENTBRITE_TOKEN`**. It must belong to an account authorised to read the organisation owning organiser **`18441294721`**. Do not paste the token into an issue, source file or chat. An optional repository Actions variable **`EVENTBRITE_ORGANIZATION_ID`** limits discovery to the owning organisation; it is an organisation ID, not the organiser profile ID. Without that variable the sync uses the documented `GET /users/me/organizations/` endpoint and filters organisation event requests to the specified organiser.
 
@@ -18,7 +18,7 @@ Eventbrite's documented API supports paginated [organisation events](https://www
 
 ## Prepared automation
 
-The workflow is installed and active for **daily 06:17 UTC** execution and manual dispatch. [Manual run 38990906654](https://github.com/antonyede/analytics-org-nz/actions/runs/38990906654) passed its tests, rebuilt and republished the preserved archive, then deliberately failed because `EVENTBRITE_TOKEN` was missing. Its safe status commit is `3741c32`; [Pages run 38990920539](https://github.com/antonyede/analytics-org-nz/actions/runs/38990920539) succeeded. Latest attempted sync: **2026-10-17 01:27:14 UTC**. Authenticated retrieval has **never succeeded**; the schedule alone does not establish a working feed.
+The workflow is installed and active for **daily 06:17 UTC** execution and manual dispatch. [Manual run 38990906654](https://github.com/antonyede/analytics-org-nz/actions/runs/38990906654) passed its tests, rebuilt and republished the preserved archive, then deliberately failed because `EVENTBRITE_TOKEN` was missing. Its safe status commit is `3741c32`; [Pages run 38990920539](https://github.com/antonyede/analytics-org-nz/actions/runs/38990920539) succeeded. Verified manual attempt: **2026-10-17 01:27:14 UTC**. No authenticated retrieval had succeeded at that point; the schedule alone does not establish a working feed.
 
 - Uses only the documented organisation-list and organisation-events GET endpoints. It requests all non-draft statuses, filters by the exact organiser, follows every reported page, verifies counts, and rejects duplicate/mismatched records. Only explicitly public (`listed=true`) events are persisted; unlisted events and drafts are excluded before their details are saved.
 - Includes upcoming/in-progress events until their UTC end time, with upcoming sorted oldest-first and past events newest-first. Display dates use each event's IANA timezone, including New Zealand daylight saving. Past events paginate ten per page with the original query parameter and direct no-JavaScript archive pages. Cancelled events are labelled.

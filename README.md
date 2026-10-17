@@ -15,7 +15,7 @@ Live preview: <https://antonyede.github.io/analytics-org-nz/>. GitHub Pages publ
 - 47 referenced locally hosted assets, including original Webflow CSS/JavaScript, jQuery, HK Grotesk and Montserrat fonts. No new blanket licence is added; see [asset provenance](ASSET_RIGHTS.md).
 - Original Mailchimp subscription actions and external event/profile/social links.
 - Owner-requested edits: the TRA sponsor block is removed from all footers; Antony Ede's complete About profile is removed, with the other nine profiles preserved. Both removals are enforced by the builder.
-- Contact form replaced by a visible email link; newsletter retained separately. Daily 06:17 UTC/manual Eventbrite workflow is installed with validation, safe retention and visible freshness diagnostics. Its first run confirmed the missing `EVENTBRITE_TOKEN` blocker; the original 25-event archive remains, with 0 API-synced events and no last-success timestamp.
+- Contact form replaced by a visible email link; newsletter retained separately. Daily 06:17 UTC/manual Eventbrite workflow is installed with validation, safe retention and visible freshness diagnostics. At verification on 17 October 2026 its first run confirmed missing `EVENTBRITE_TOKEN`, retaining 25 archived events with 0 API-synced events. See [live sync status](https://antonyede.github.io/analytics-org-nz/event-sync-status.json) for later attempts and successes.
 
 Source HTML and asset bytes are retained under `source/`; publishable files are under `docs/`. GitHub Pages can serve `main:/docs` directly, with `.nojekyll` disabling Jekyll. There is no package install or build step at deployment time and no custom domain configuration.
 
