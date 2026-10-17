@@ -1,0 +1,25 @@
+{
+  "workflow_path": ".github/workflows/sync-events.yml",
+  "workflow_active": true,
+  "cron": "17 6 * * *",
+  "manual_dispatch": true,
+  "permissions": {
+    "contents": "write",
+    "pages": "write"
+  },
+  "manual_run_id": 38990906654,
+  "manual_run_url": "https://github.com/antonyede/analytics-org-nz/actions/runs/38990906654",
+  "conclusion": "failure",
+  "blocker": "credentials_missing",
+  "last_attempt_at": "2026-10-17T01:27:14.887991Z",
+  "last_successful_sync": null,
+  "api_synced_event_count": 0,
+  "retained_archive_count": 25,
+  "tests_build_status_commit_and_pages_request_passed": true,
+  "pages_run_id": 38990920539,
+  "pages_conclusion": "success",
+  "status_commit": "3741c32a449dda3f8d7fac3ddc0a749b8347ccdf",
+  "real_api_events_verified": false,
+  "real_api_images_verified": false,
+  "private_api_or_website_scraper_used": false
+}

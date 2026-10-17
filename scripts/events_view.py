@@ -45,7 +45,7 @@ def note(soup, status, dataset, base):
         empty = current.select_one('.w-dyn-empty')
         if empty:
             empty.clear()
-            link = soup.new_tag('a', href=ORGANIZER_URL, target='_blank', rel='noopener')
+            link = soup.new_tag('a', href=ORGANIZER_URL, target='_blank', rel='noopener', attrs={'class':'text-block-19'})
             link.string = 'Check Eventbrite for upcoming events'
             empty.append(link)
     stylesheet = soup.new_tag('link', rel='stylesheet', href=base+'/events-sync.css')
@@ -138,13 +138,15 @@ def prepare_event_pages(pages, base, root=ROOT):
     for number,soup in variants.items():
         if dataset:
             fallback = soup.select_one('main noscript')
-            if fallback:
-                fallback.clear()
-                for target in range(1,count+1):
-                    link = soup.new_tag('a',href=base+('/events/' if target == 1 else f'/events/page/{target}/'))
-                    link.string = f'Events page {target}'
-                    fallback.append(link)
-                    fallback.append(' ')
+            if not fallback:
+                fallback = soup.new_tag('noscript')
+                soup.select_one('main').append(fallback)
+            fallback.clear()
+            for target in range(1,count+1):
+                link = soup.new_tag('a',href=base+('/events/' if target == 1 else f'/events/page/{target}/'))
+                link.string = f'Events page {target}'
+                fallback.append(link)
+                fallback.append(' ')
         note(soup,status,dataset,base)
         pages[EVENTS_URL + (f'?522c7db6_page={number}' if number > 1 else '')] = soup
     output = root/'docs/event-sync-status.json'

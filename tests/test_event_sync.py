@@ -5,13 +5,14 @@ from pathlib import Path
 import sys
 import tempfile
 import unittest
-from unittest.mock import Mock
+from unittest.mock import Mock, patch
 from urllib.error import HTTPError
 from io import BytesIO
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts'))
-from sync_events import API, ORGANIZER_ID, SyncError, fetch_events, paginated, run
+from sync_events import API, ORGANIZER_ID, SyncError, download_image, fetch_events, paginated, run
+from PIL import Image
 from events_view import prepare_event_pages, split_events
 from bs4 import BeautifulSoup
 
@@ -40,6 +41,25 @@ class FakeAPI:
 
 
 class SyncTests(unittest.TestCase):
+    def test_image_bytes_are_verified_and_auth_is_not_forwarded(self):
+        body=BytesIO();Image.new('RGB',(8,8),'white').save(body,format='JPEG')
+        record={'id':'1','image_source_url':'https://cdn.evbuc.com/fixture.jpg'}
+        opener=Mock();opener.open.return_value=BytesIO(body.getvalue())
+        with tempfile.TemporaryDirectory() as temporary,patch('sync_events.build_opener',return_value=opener):
+            root=Path(temporary);staging=root/'staging';staging.mkdir()
+            download_image(record,None,root,staging)
+            self.assertEqual(len(list(staging.iterdir())),1)
+            self.assertTrue(record['image_path'].endswith('.jpg'))
+            self.assertIsNone(opener.open.call_args.args[0].get_header('Authorization'))
+
+    def test_non_image_download_is_rejected(self):
+        record={'id':'1','image_source_url':'https://cdn.evbuc.com/fixture.jpg'}
+        opener=Mock();opener.open.return_value=BytesIO(b'<html>not an image</html>')
+        with tempfile.TemporaryDirectory() as temporary,patch('sync_events.build_opener',return_value=opener):
+            root=Path(temporary)
+            with self.assertRaises(SyncError):download_image(record,None,root,root)
+            self.assertEqual(list(root.iterdir()),[])
+
     def test_retries_back_off_and_do_not_retry_auth_errors(self):
         sleeps=[]
         api=API('fixture-not-a-real-token',sleep=sleeps.append)
@@ -61,6 +81,19 @@ class SyncTests(unittest.TestCase):
         self.assertEqual([c[1]['page'] for c in api.calls],[1,2,3])
         self.assertTrue(all(c[1]['organizer_filter']==ORGANIZER_ID for c in api.calls))
         self.assertTrue(all('past' not in c[1].get('time_filter','') for c in api.calls))
+
+    def test_organization_discovery_uses_documented_me_endpoint(self):
+        class Discovery(FakeAPI):
+            def get(self,path,parameters):
+                if path=='/users/me/organizations/':
+                    self.calls.append((path,parameters))
+                    return {'pagination':{'object_count':1,'page_number':1,'page_count':1,'has_more_items':False},'organizations':[{'id':'123'}]}
+                return super().get(path,parameters)
+        api=Discovery([event()])
+        rows,_=fetch_events(api)
+        self.assertEqual(len(rows),1)
+        self.assertEqual(api.calls[0][0],'/users/me/organizations/')
+        self.assertEqual(api.calls[1][0],'/organizations/123/events/')
 
     def test_incomplete_pagination_is_rejected(self):
         with self.assertRaises(SyncError):
@@ -147,16 +180,17 @@ class SyncTests(unittest.TestCase):
     def test_renderer_pages_dates_images_and_html_escaping(self):
         manifest=json.loads((ROOT/'source/routes.json').read_text())
         pages={r['url']:BeautifulSoup((ROOT/'source'/r['file']).read_text(),'html.parser') for r in manifest['routes'] if r['title']}
-        rows,_=fetch_events(FakeAPI([event(n) for n in range(1,26)]),'123')
+        rows,_=fetch_events(FakeAPI([event(n) for n in range(1,36)]),'123')
         rows[0]['name']='<script>not executable</script>'
         rows[0]['image_path']='assets/eventbrite/fixture.jpg'
         with tempfile.TemporaryDirectory() as temporary:
             root=Path(temporary);(root/'data').mkdir()
             (root/'data/event-sync-status.json').write_text(json.dumps({'result':'success'}))
-            (root/'data/events.json').write_text(json.dumps({'source':'eventbrite_api','organizer_id':ORGANIZER_ID,'public_event_count':25,'synced_at':'2026-10-17T00:00:00Z','events':rows}))
+            (root/'data/events.json').write_text(json.dumps({'source':'eventbrite_api','organizer_id':ORGANIZER_ID,'public_event_count':35,'synced_at':'2026-10-17T00:00:00Z','events':rows}))
             variants=prepare_event_pages(pages,'/analytics-org-nz',root)
-            self.assertEqual([len(variants[n].select('.collection-list-wrapper-2 .w-dyn-item')) for n in (1,2,3)],[10,10,5])
-            self.assertEqual(sum(len(v.select('.collection-list-wrapper-2 .w-dyn-item')) for v in variants.values()),25)
+            self.assertEqual([len(variants[n].select('.collection-list-wrapper-2 .w-dyn-item')) for n in (1,2,3,4)],[10,10,10,5])
+            self.assertEqual(sum(len(v.select('.collection-list-wrapper-2 .w-dyn-item')) for v in variants.values()),35)
+            self.assertIsNotNone(variants[1].select_one('noscript a[href="/analytics-org-nz/events/page/4/"]'))
             self.assertEqual(variants[1].select_one('.event-name').get_text(),'<script>not executable</script>')
             self.assertIsNone(variants[1].select_one('.event-name script'))
             self.assertEqual(len(variants[1].select('.event-thumbnail')),1)

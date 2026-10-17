@@ -4,7 +4,7 @@ An owner-authorised static migration of [analytics.org.nz](https://analytics.org
 
 Repository: <https://github.com/antonyede/analytics-org-nz>
 
-Live preview: <https://antonyede.github.io/analytics-org-nz/>. GitHub Pages publishes `main:/docs` on the default GitHub domain. **The preview is deployed; production cutover is not recommended yet.** Contact delivery is disabled, signup delivery is unverified, and the audit identifies inherited validation and mobile/accessibility issues. See [production readiness](PRODUCTION_READINESS.md).
+Live preview: <https://antonyede.github.io/analytics-org-nz/>. GitHub Pages publishes `main:/docs` on the default GitHub domain. Contact now uses the requested `hello@analytics.org.nz` email link. **Production cutover is not recommended yet:** newsletter delivery is unverified, the [daily Eventbrite sync](EVENT_SYNC.md) awaits its authorised API token, and inherited validation/mobile/accessibility issues remain.
 
 ## What is included
 
@@ -15,6 +15,7 @@ Live preview: <https://antonyede.github.io/analytics-org-nz/>. GitHub Pages publ
 - 47 referenced locally hosted assets, including original Webflow CSS/JavaScript, jQuery, HK Grotesk and Montserrat fonts. No new blanket licence is added; see [asset provenance](ASSET_RIGHTS.md).
 - Original Mailchimp subscription actions and external event/profile/social links.
 - Owner-requested edits: the TRA sponsor block is removed from all footers; Antony Ede's complete About profile is removed, with the other nine profiles preserved. Both removals are enforced by the builder.
+- Contact form replaced by a visible email link; newsletter retained separately. Daily 06:17 UTC/manual Eventbrite workflow is installed with validation, safe retention and visible freshness diagnostics. Its first run confirmed the missing `EVENTBRITE_TOKEN` blocker; the original 25-event archive remains, with 0 API-synced events and no last-success timestamp.
 
 Source HTML and asset bytes are retained under `source/`; publishable files are under `docs/`. GitHub Pages can serve `main:/docs` directly, with `.nojekyll` disabling Jekyll. There is no package install or build step at deployment time and no custom domain configuration.
 
@@ -64,4 +65,4 @@ To intentionally refresh the snapshot from the live source, run `scripts/capture
 
 ## Known limitations requiring review
 
-The Webflow contact backend and source analytics proxy do not move to static hosting. The contact form keeps its initial appearance and reports unavailable delivery on attempted submission, offering the help address already published in the source privacy statement. Mailchimp is retained but has not been submitted during tests. See the migration report for alternatives, inherited source issues, and URL/JavaScript differences.
+The Contact page now provides `mailto:hello@analytics.org.nz`, which uses the visitor's email app; inbox delivery was not tested. Mailchimp is retained but has not been submitted. The source analytics proxy remains omitted. [Eventbrite sync setup](EVENT_SYNC.md) explains the required repository secret and why an unauthenticated scraper was not used. See the production report for remaining inherited issues.

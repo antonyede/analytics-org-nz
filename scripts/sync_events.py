@@ -251,7 +251,7 @@ def run(root=ROOT, token=None, organization_id=None, allow_large_decrease=False,
                                   'public_event_count': len(events), 'events': events})
         status.update({'result': 'success', 'code': 'ok', 'message': 'All pages of public organiser events were verified.',
                        'last_successful_sync': synced_at, 'retained_synced_event_count': len(events),
-                       'api_records_examined': source_count, 'retries': getattr(api, 'retries', 0)})
+                       'public_events_verified': len(events), 'retries': getattr(api, 'retries', 0)})
         exit_code = 0
     except SyncError as error:
         status.update({'result': 'blocked' if error.blocked else 'error', 'code': error.code, 'message': error.message})

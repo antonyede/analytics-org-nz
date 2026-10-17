@@ -18,5 +18,11 @@
   "access_method": "documented authenticated Eventbrite API only",
   "authenticated_sync_count": 0,
   "last_successful_sync": null,
-  "retained_archive_count": 25
+  "retained_archive_count": 25,
+  "organizer_website_links": [
+    "http://analytics.org.nz/"
+  ],
+  "documented_unauthenticated_api_url": "https://www.eventbriteapi.com/v3/users/me/organizations/",
+  "documented_unauthenticated_api_status": 401,
+  "documented_unauthenticated_api_error": "NO_AUTH"
 }

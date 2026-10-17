@@ -18,7 +18,7 @@ Eventbrite's documented API supports paginated [organisation events](https://www
 
 ## Prepared automation
 
-The workflow is designed for **daily 06:17 UTC** execution and manual dispatch. Its installation and execution status are recorded in [verification evidence](evidence/event-sync). The schedule is not evidence that authenticated retrieval has succeeded.
+The workflow is installed and active for **daily 06:17 UTC** execution and manual dispatch. [Manual run 38990906654](https://github.com/antonyede/analytics-org-nz/actions/runs/38990906654) passed its tests, rebuilt and republished the preserved archive, then deliberately failed because `EVENTBRITE_TOKEN` was missing. Its safe status commit is `3741c32`; [Pages run 38990920539](https://github.com/antonyede/analytics-org-nz/actions/runs/38990920539) succeeded. Latest attempted sync: **2026-10-17 01:27:14 UTC**. Authenticated retrieval has **never succeeded**; the schedule alone does not establish a working feed.
 
 - Uses only the documented organisation-list and organisation-events GET endpoints. It requests all non-draft statuses, filters by the exact organiser, follows every reported page, verifies counts, and rejects duplicate/mismatched records. Only explicitly public (`listed=true`) events are persisted; unlisted events and drafts are excluded before their details are saved.
 - Includes upcoming/in-progress events until their UTC end time, with upcoming sorted oldest-first and past events newest-first. Display dates use each event's IANA timezone, including New Zealand daylight saving. Past events paginate ten per page with the original query parameter and direct no-JavaScript archive pages. Cancelled events are labelled.

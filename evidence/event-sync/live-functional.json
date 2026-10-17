@@ -1,0 +1,102 @@
+{
+  "target": "https://antonyede.github.io/analytics-org-nz",
+  "internal_urls_checked": 39,
+  "self_hosted_assets_checked": 47,
+  "metadata_routes_checked": [
+    "https://analytics.org.nz/",
+    "https://analytics.org.nz/about",
+    "https://analytics.org.nz/contact",
+    "https://analytics.org.nz/events",
+    "https://analytics.org.nz/privacy-policy"
+  ],
+  "missing_assets_or_pages": [],
+  "external_links_preserved": [
+    "https://cdao-nz.coriniumintelligence.com/",
+    "https://linkedin.com/in/dr-boris-bacic",
+    "https://twitter.com/analyticsnz",
+    "https://www.eventbrite.co.nz/e/2023-data-governance-webinar-series-frameworks-and-implementation-tickets-666589967537",
+    "https://www.eventbrite.co.nz/e/2023-dgws-change-management-and-organisational-culture-tickets-669091971097",
+    "https://www.eventbrite.co.nz/e/2023-dgws-data-ethics-risk-and-compliance-tickets-669093024247",
+    "https://www.eventbrite.co.nz/e/2023-dgws-data-governance-frameworks-and-implementation-tickets-669095000157",
+    "https://www.eventbrite.co.nz/e/2023-dgws-data-quality-management-tickets-669089704317",
+    "https://www.eventbrite.co.nz/e/2023-dgws-data-stewardship-and-ownership-tickets-669093947007",
+    "https://www.eventbrite.co.nz/e/analytics-and-ai-in-agritech-dunedin-tickets-79096845795?aff=ebdsoporgprofile",
+    "https://www.eventbrite.co.nz/e/analytics-forum-data-human-performance-aucklandonline-7-oct-25-tickets-1649093144989",
+    "https://www.eventbrite.co.nz/e/analytics-forum-social-investment-wellington-tue-14-oct-25-tickets-1661868887579",
+    "https://www.eventbrite.co.nz/e/analytics-forum-sustainability-responsible-ai-akl-tue-10-feb-2026-tickets-1981393146238",
+    "https://www.eventbrite.co.nz/e/applications-of-ai-auckland-forum-3-october-tickets-73506759697?aff=ebdsoporgprofile#",
+    "https://www.eventbrite.co.nz/e/auckland-data-science-analytics-forum-covid-19-june-1st-2021-tickets-154162174213",
+    "https://www.eventbrite.co.nz/e/auckland-forum-interpretable-ai-women-in-data-science-wids-tickets-92829406253",
+    "https://www.eventbrite.co.nz/e/data-analytics-for-our-future-health-wellington-25-july-2019-tickets-64521637956?aff=ebdsoporgprofile#",
+    "https://www.eventbrite.co.nz/e/data-governance-auckland-forum-7-october-tickets-73757369277?aff=ebdsoporgprofile#",
+    "https://www.eventbrite.co.nz/e/enhancing-analytics-wellington-tickets-57662009623?aff=ebdsoporgprofile#",
+    "https://www.eventbrite.co.nz/e/health-and-wellbeing-analytics-auckland-forum-3-december-2019-tickets-82932857409",
+    "https://www.eventbrite.co.nz/e/nz-data-science-analytics-forum-data-literacy-and-storytelling-tickets-1991417286712",
+    "https://www.eventbrite.co.nz/e/nz-data-science-analytics-forum-wellington-from-insight-to-impact-tickets-1998991134294",
+    "https://www.eventbrite.co.nz/e/the-journey-towards-organisational-data-maturity-in-person-event-tickets-398640483417",
+    "https://www.eventbrite.co.nz/e/the-journey-towards-organisational-data-maturity-virtual-event-tickets-398624936917",
+    "https://www.eventbrite.co.nz/e/wellington-26-november-2019-analytics-in-the-energy-sector-tickets-78928907487?aff=ebdsoporgprofile#",
+    "https://www.eventbrite.co.nz/e/wellington-forum-privacy-and-ethics-in-data-science-12th-may-tickets-152300315343",
+    "https://www.eventbrite.co.nz/o/nz-data-science-analytics-forum-18441294721",
+    "https://www.linkedin.com/groups/1959222/",
+    "https://www.linkedin.com/in/andrew-mason-89975222/",
+    "https://www.linkedin.com/in/christopher-reid-aotearoa/",
+    "https://www.linkedin.com/in/corrinlakeland/",
+    "https://www.linkedin.com/in/garethrobins/",
+    "https://www.linkedin.com/in/oliver-stevenson-28712a54/",
+    "https://www.linkedin.com/in/saravdvelde/",
+    "https://www.linkedin.com/in/shanerossnz/",
+    "https://www.linkedin.com/in/susanneedham/"
+  ],
+  "inherited_placeholders": [
+    {
+      "page": "docs/events/index.html",
+      "text": "Events"
+    },
+    {
+      "page": "docs/events/index.html",
+      "text": "About"
+    },
+    {
+      "page": "docs/events/index.html",
+      "text": "Contact"
+    },
+    {
+      "page": "docs/events/index.html",
+      "text": "November 21, 2024 Over Coming the Data Dilemma: Data & AI Strategies for Small Organisations Free Online"
+    },
+    {
+      "page": "docs/events/page/2/index.html",
+      "text": "Events"
+    },
+    {
+      "page": "docs/events/page/2/index.html",
+      "text": "About"
+    },
+    {
+      "page": "docs/events/page/2/index.html",
+      "text": "Contact"
+    },
+    {
+      "page": "docs/events/page/3/index.html",
+      "text": "Events"
+    },
+    {
+      "page": "docs/events/page/3/index.html",
+      "text": "About"
+    },
+    {
+      "page": "docs/events/page/3/index.html",
+      "text": "Contact"
+    }
+  ],
+  "ui_checks": [
+    "Mobile menu opens and Events navigation works",
+    "Pagination next, previous, reload and browser history preserve query URLs and records",
+    "Contact form replaced by visible mailto:hello@analytics.org.nz; newsletter remains separate; no email sent",
+    "Both Mailchimp actions, field names, target and bot honeypot preserved; no real subscription submitted",
+    "Without JavaScript the contact email link is visible and direct archive fallback links work"
+  ],
+  "network_submissions": [],
+  "unexpected_external_resource_requests": []
+}

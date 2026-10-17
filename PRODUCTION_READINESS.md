@@ -1,6 +1,6 @@
 # Production-readiness audit — 17 October 2026
 
-**The preview is deployed, but it is not ready for a production domain cutover.** Contact delivery is disabled. Mailchimp is configured to use the original service, but no signup, list acceptance, confirmation email, or delivery has been verified. Its existing browser-validation gap also remains. No real contact or subscription request was sent during this audit.
+**The preview is deployed, but it is not ready for a production domain cutover.** Contact is now a visible `mailto:hello@analytics.org.nz` link as requested, with no contact form or website delivery backend. Mailchimp delivery and validation remain unresolved. A daily Eventbrite sync is installed but blocked pending `EVENTBRITE_TOKEN`; 25 archived events remain, with no successful API sync. No real contact or subscription request was sent. See [the current sync implementation and evidence](EVENT_SYNC.md).
 
 Live preview: <https://antonyede.github.io/analytics-org-nz/>
 
@@ -12,18 +12,18 @@ These changes were published in [785702d](https://github.com/antonyede/analytics
 
 ## Every form and what it actually does
 
-There are **four form elements, three visible**, across the five live pages. Events, About and Privacy policy have no forms.
+After the subsequent contact-email request there are **three form elements, two visible**: the two Mailchimp embeds and the hidden legacy Home form. Events, About and Privacy policy have no forms. The Contact row below records the replacement of its former form.
 
 | Page / form | Visible? | Browser behaviour verified | Actual delivery |
 | --- | --- | --- | --- |
-| Contact — `#email-form` | Yes | Full Name is required. A nonempty malformed email fails native email validity, but email and message are not marked required. The form uses a non-submitting method and a local handler that shows the unavailable message and `help@analytics.org.nz`. The no-JavaScript fallback also cannot transmit data. | **Disabled. No message is delivered.** A working endpoint and confirmed recipient still need to be chosen. The displayed help inbox was published in the source privacy statement; inbox deliverability was not tested. |
+| Contact — email link (former form removed) | Yes | Visible `mailto:hello@analytics.org.nz`, also without JavaScript. Newsletter remains separate. | Uses the visitor's configured email application. No email was sent and mailbox deliverability was not tested. |
 | Home — `#mc-embedded-subscribe-form` | Yes | Original HTTPS Mailchimp POST action, `EMAIL`/`FNAME`/`LNAME` fields, new-tab target and honeypot are retained. `novalidate` bypasses automatic browser validation. Email has a `required` CSS class but **no HTML `required` attribute**; no Mailchimp validation script/global was found. Empty form passes `checkValidity()`; malformed nonempty email fails a direct validity probe but automatic validation is bypassed on submission. | **Configured, not proven end to end.** Native form POST is directed at the original Mailchimp account. No request was made to the action, so acceptance, double opt-in, list membership and confirmation/delivery remain unverified. Server-side validation is also unverified. |
 | Contact — `#mc-embedded-subscribe-form` | Yes | Same original action, fields, target, honeypot and browser-validation gap as the Home signup. | **Configured, not proven end to end**, under the same restrictions. |
 | Home — old Webflow `#email-form` | No | Hidden legacy form. First and Last Name are required; email is not. It is deliberately non-submitting under static hosting. It is separate from the visible Mailchimp signup. | **Disabled and not part of the visible signup flow.** |
 
 The Mailchimp action is `https://analytics.us9.list-manage.com/subscribe/post?u=1a3a91f39ef59858d7c75f6ba&id=db8c88dafd`. This public embed configuration is preserved; its presence alone is not proof of delivery. Validation probes set temporary test values only in the DOM and never invoke a signup submission. [Machine-readable form inventory](evidence/deployed-2026-10-17/audit.json).
 
-Before cutover, connect or replace the contact flow, confirm the intended recipient, correct the signup's browser-validation behaviour, and perform an explicitly authorised controlled Mailchimp delivery test. No new accounts, credentials, backend, or form provider were created during this task.
+The contact flow has now been replaced by the requested email link. Before cutover, confirm the mailbox, correct signup browser validation, perform a controlled Mailchimp delivery test only when explicitly authorised, and complete Eventbrite API setup. No new accounts, credentials, backend, or form provider were created.
 
 ## Live routing and assets
 
@@ -37,7 +37,7 @@ Detailed statuses, final redirect URLs, response hashes and page/form properties
 
 ## Responsive screenshots
 
-The deployed comparison matrix covers desktop **1440 × 1000**, tablet **834 × 1112**, and mobile **390 × 844**, at device scale factor 1 in Linux Chromium. It includes all five live pages, all Events pagination states, the explicit page-1 alias, and the real deployed 404. Normal pages also include an open menu; Events includes hover states; Home and Contact include a focused signup field.
+The original deployed comparison matrix, before the subsequent Contact email and sync-notice changes, covers desktop **1440 × 1000**, tablet **834 × 1112**, and mobile **390 × 844**, at device scale factor 1 in Linux Chromium. It includes all five live pages, all Events pagination states, the explicit page-1 alias, and the real deployed 404. Normal pages also include an open menu; Events includes hover states; Home and Contact include a focused signup field. [The current update checks](evidence/event-sync/README.md) add 15 real deployed screenshots at the same sizes, testing the email link, retained newsletter, sync notice, all three archive pages, missing images, horizontal overflow and preserved profile/footer removals.
 
 The original source and deployed screenshots are both retained. A second source screenshot applies only the two requested removals in the browser DOM, without changing Webflow. Comparison against that expected screenshot uses every RGB channel with zero tolerance and **no masks**. **All 66 deployed comparisons passed with identical pixels against the expected source with those edits**, with matching dimensions and zero recorded HTTP or JavaScript errors. This separates the requested content differences from unintended layout changes. [Full screenshot index and results](evidence/deployed-2026-10-17/README.md).
 
@@ -50,7 +50,7 @@ The original source and deployed screenshots are both retained. A second source 
 | Mobile footer | At 390 px, the inherited footer CSS produces a **1 px-high overflow-hidden container** around 45 px-high social links. The Privacy policy link is `display:none`. The source has the same issue; the sponsor removal does not cause it. | Fix mobile footer visibility/navigation before calling the mobile experience production-ready. Unrelated CSS was not altered in this requested content edit. |
 | Keyboard menu access | The inherited hamburger is a `div` with no button role or tab stop (`tabIndex = -1`). It cannot be reached through normal Tab navigation. | Add proper keyboard-accessible menu behaviour. |
 | Privacy statement | The copied statement still describes WordPress, Akismet and Wordfence, while this copy runs on GitHub Pages and omits the source tracking setup. | Update it to describe the actual hosting and data flows before cutover. |
-| CMS updates | Events and committee profiles are static snapshots. Future Webflow edits do not sync automatically. | Use Git edits or a deliberate recapture/rebuild workflow. The two owner-requested removals persist in the builder. |
+| CMS updates | Committee profiles remain static. Events now have a daily/manual authenticated API workflow, but the first run was blocked by missing `EVENTBRITE_TOKEN`; the original archive is clearly labelled and retained. | Add the authorised Eventbrite token as a repository Actions secret, then rerun and verify a real API feed. Until then there are no API-synced events. |
 | JavaScript | The original menu and animation behaviour needs JavaScript. Query-based archive selection also needs JavaScript; direct archive fallback links work without it. | Accept this behaviour or author a separate accessibility/progressive-enhancement change. |
 | Hidden template leftovers | An unused Events overlay retains placeholder links and a template mailto address inherited from the source. It is not the active menu or a form destination. | Optional cleanup after the fidelity migration review. |
 | Other browsers | Chromium is verified at the listed sizes. Safari, Firefox, other sizes and transient animation timing have not been tested. | Complete any browser support checks required for launch. |
