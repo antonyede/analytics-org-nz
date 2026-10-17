@@ -1,0 +1,26 @@
+{
+  "recorded_at": "2026-10-16T22:54:55.156018+00:00",
+  "repository": "https://github.com/antonyede/analytics-org-nz",
+  "intended_preview": "https://antonyede.github.io/analytics-org-nz/",
+  "pages_creation": {
+    "endpoint": "POST /repos/antonyede/analytics-org-nz/pages",
+    "request": {
+      "source": {
+        "branch": "main",
+        "path": "/docs"
+      },
+      "build_type": "legacy"
+    },
+    "http_status": 403,
+    "message": "Resource not accessible by integration"
+  },
+  "pages_settings_read_status": 404,
+  "public_preview_status": 404,
+  "state": "Blocked: owner must enable branch deployment from main:/docs in repository Pages settings",
+  "deployed_browser_verification": "Not run; no deployed site is available",
+  "dns_changed": false,
+  "custom_domain_changed": false,
+  "source_site_changed": false,
+  "credentials_created": false,
+  "permissions_broadened": false
+}

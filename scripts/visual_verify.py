@@ -62,12 +62,16 @@ def main():
     parser.add_argument("--target", default="http://127.0.0.1:8000/analytics-org-nz")
     parser.add_argument("--output", default="evidence/local")
     parser.add_argument("--routes", nargs="*", help="Restrict to named routes after a failure")
+    parser.add_argument("--owner-edits", action="store_true", help="Also compare against source DOM with the two requested removals")
+    parser.add_argument("--cache-bust", help="Append this revision to target HTML requests")
     args = parser.parse_args()
     out = ROOT / args.output
     out.mkdir(parents=True, exist_ok=True)
     report = {"started_at": datetime.now(timezone.utc).isoformat(), "source": "https://analytics.org.nz",
               "target": args.target, "platform": platform.platform(), "viewports": SIZES,
               "device_scale_factor": 1, "comparisons": [], "network_errors": [], "console_errors": []}
+    report['expected_owner_edits'] = ['Remove TRA sponsor anchor from footer; preserve wrapper', 'Remove complete Antony Ede profile from About'] if args.owner_edits else []
+    report['target_revision_query'] = args.cache_bust
     with sync_playwright() as p:
         browser = p.chromium.launch(executable_path="/usr/bin/chromium", headless=True, args=["--no-sandbox"])
         report["browser"] = browser.version
@@ -98,6 +102,8 @@ def main():
                     target_route = route
                     if side == "target" and name == "404" and origin.startswith("http://127."):
                         target_route = "/404.html"
+                    if side == 'target' and args.cache_bust:
+                        target_route += ('&' if '?' in target_route else '?') + 'migration_revision=' + args.cache_bust
                     response = page.goto(origin + target_route, wait_until="networkidle", timeout=60000)
                     ready(page)
                     for state in states:
@@ -116,10 +122,32 @@ def main():
                         filename = f"{size}-{name}-{state}-{side}.png"
                         page.screenshot(path=str(out / filename), full_page=True, animations="disabled")
                         files[(side, state)] = filename
+                        if side == 'source' and args.owner_edits:
+                            page.evaluate(r'''() => {
+                              const nodes = [...document.querySelectorAll('.section.footer a[href="https://tra.co.nz/"]')];
+                              if (location.pathname.replace(/\/$/, '') === '/about') {
+                                document.querySelectorAll('.w-dyn-item').forEach(x => {
+                                  if (x.querySelector('h3.name')?.textContent.trim() === 'Antony Ede') nodes.push(x);
+                                });
+                              }
+                              window.__qaOwnerRemovals = nodes.map(node => ({node, parent: node.parentNode, next: node.nextSibling}));
+                              nodes.forEach(x => x.remove());
+                            }''')
+                            expected = f'{size}-{name}-{state}-source-with-owner-edits.png'
+                            page.screenshot(path=str(out / expected), full_page=True, animations='disabled')
+                            files[('expected', state)] = expected
+                            page.evaluate('''() => {
+                              window.__qaOwnerRemovals.forEach(x => x.parent.insertBefore(x.node, x.next));
+                              delete window.__qaOwnerRemovals;
+                            }''')
                     context.close()
                 for state in states:
                     prefix = f"{size}-{name}-{state}"
-                    result = compare(out / files[("source", state)], out / files[("target", state)], out / (prefix + "-diff.png"))
+                    reference = files[('expected', state)] if args.owner_edits else files[('source', state)]
+                    result = compare(out / reference, out / files[("target", state)], out / (prefix + "-diff.png"))
+                    if args.owner_edits:
+                        result['expected_screenshot'] = reference
+                        result['unmodified_source_difference'] = compare(out / files[('source', state)], out / files[('target', state)], out / (prefix + '-unmodified-source-diff.png'))
                     result.update({"route": route, "name": name, "viewport": size, "state": state,
                                    "source_screenshot": files[("source", state)], "target_screenshot": files[("target", state)]})
                     report["comparisons"].append(result)
