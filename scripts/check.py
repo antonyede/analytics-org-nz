@@ -28,6 +28,10 @@ def main():
     missing, internal, placeholders, external = [], set(), [], set()
     for file in sorted(DOCS.rglob("*.html")):
         soup = BeautifulSoup(file.read_text(), "html.parser")
+        for footer in soup.select('.section.footer'):
+            assert not footer.select('.sponsored-by, a[href="https://tra.co.nz/"]'), str(file)
+            assert not footer.select('img[src*="NZDatalogo-04"]'), str(file)
+            assert len(footer.select('.footer-social-links-container a')) == 3, str(file)
         for tag in soup.select("[href], [src], [srcset]"):
             values = [tag[a] for a in ["href", "src"] if tag.get(a)]
             if tag.get("srcset"):

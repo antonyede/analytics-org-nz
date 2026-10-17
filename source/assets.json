@@ -129,11 +129,6 @@
     "sha256": "9f712b9233e6baf3cad65abd2fe3655939aeb7957729c2de35ce5612f21e2d3f",
     "bytes": 5726
   },
-  "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/603d5b8b664b3525eaae036c_NZDatalogo-04.svg": {
-    "path": "assets/960d0a068529-603d5b8b664b3525eaae036c_NZDatalogo-04.svg",
-    "sha256": "8a142cdaa7fb81b26d54b7f631e911c1e4102ae1bd068eae1d963ed929829991",
-    "bytes": 1666
-  },
   "https://cdn.prod.website-files.com/603c1984e4f2732b57499254/603d5b8bf86ef6450e15e181_NZDatalogo-05.svg": {
     "path": "assets/bf38a2ae7704-603d5b8bf86ef6450e15e181_NZDatalogo-05.svg",
     "sha256": "4e59eea75a9b4760e2c6b92e54a475ef60c147618bd01beb532522635bc88da1",

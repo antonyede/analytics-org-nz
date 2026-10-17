@@ -61,6 +61,10 @@ def asset(url):
 
 def transform(record):
     soup = BeautifulSoup((SOURCE / record["file"]).read_text(), "html.parser")
+    # Owner-requested footer edit. Retain its empty layout container so the
+    # privacy/social links and responsive footer geometry stay in place.
+    for sponsor in soup.select('.section.footer a[href="https://tra.co.nz/"]'):
+        sponsor.decompose()
     for script in list(soup.select("script")):
         src = script.get("src", "")
         code = script.get_text()
