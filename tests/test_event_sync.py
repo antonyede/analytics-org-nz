@@ -41,6 +41,19 @@ class FakeAPI:
 
 
 class SyncTests(unittest.TestCase):
+    def test_api_validation_diagnostic_identifies_request_without_secret(self):
+        secret='fixture-sensitive-token-never-log'
+        body=json.dumps({'error':'ARGUMENTS_ERROR','error_description':'Invalid page_size; Authorization Bearer '+secret+'; token='+secret}).encode()
+        api=API(secret)
+        api.opener.open=Mock(side_effect=HTTPError('https://www.eventbriteapi.com',400,'bad request',{},BytesIO(body)))
+        with self.assertRaises(SyncError):api.get('/users/me/organizations/',{'page':1,'page_size':50,'token':secret})
+        detail=api.last_error
+        self.assertEqual(detail['path'],'/users/me/organizations/')
+        self.assertEqual(detail['api_error'],'ARGUMENTS_ERROR')
+        self.assertEqual(detail['parameters'],{'page':'1','page_size':'50'})
+        self.assertNotIn(secret,json.dumps(detail))
+        self.assertIn('[REDACTED]',detail['description'])
+
     def test_image_bytes_are_verified_and_auth_is_not_forwarded(self):
         body=BytesIO();Image.new('RGB',(8,8),'white').save(body,format='JPEG')
         record={'id':'1','image_source_url':'https://cdn.evbuc.com/fixture.jpg'}

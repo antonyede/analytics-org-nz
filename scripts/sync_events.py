@@ -14,7 +14,7 @@ import re
 import tempfile
 import time
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlencode, urlsplit
+from urllib.parse import quote, quote_plus, urlencode, urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 from zoneinfo import ZoneInfo
 
@@ -60,6 +60,34 @@ class API:
         self.token, self.sleep = token, sleep
         self.opener = build_opener(NoRedirect())
         self.retries = 0
+        self.last_error = None
+
+    def safe_error(self, error, path, parameters):
+        """Project only bounded validation detail into logs; never headers/body dumps."""
+        def redact(value):
+            text = str(value)
+            if self.token:
+                for secret in {self.token, quote(self.token,safe=''), quote_plus(self.token)}:
+                    text = text.replace(secret,'[REDACTED]')
+            text = re.sub(r'(?i)Bearer\s+[^\s,;]+','Bearer [REDACTED]',text)
+            text = re.sub(r'(?i)((?:access_)?token\s*[=:]\s*)[^\s&,;]+',r'\1[REDACTED]',text)
+            return ' '.join(text.split())[:600]
+        detail = {}
+        try:
+            body = error.read(8193)
+            if len(body) <= 8192:
+                parsed = json.loads(body)
+                if isinstance(parsed,dict):
+                    code = redact(parsed.get('error',''))
+                    if re.fullmatch(r'[A-Z0-9_]{1,80}',code):
+                        detail['api_error'] = code
+                    if isinstance(parsed.get('error_description'),str):
+                        detail['description'] = redact(parsed['error_description'])
+        except (ValueError,UnicodeDecodeError,OSError):
+            pass
+        allowed = {'page','page_size','organizer_filter','status','show_series_parent','order_by','expand'}
+        return {'http_status':error.code,'path':path,
+                'parameters':{k:redact(v) for k,v in (parameters or {}).items() if k in allowed},**detail}
 
     def get(self, path, parameters=None):
         if not re.fullmatch(r'/users/me/organizations/|/organizations/\d+/events/', path):
@@ -76,6 +104,7 @@ class API:
                     return json.loads(data)
             except HTTPError as error:
                 status = error.code
+                self.last_error = self.safe_error(error,path,parameters)
                 if status in (401, 403):
                     raise SyncError('api_http_' + str(status), 'Eventbrite API access was denied. Check the token and organisation access.', True) from None
                 if status not in (429, 500, 502, 503, 504) or attempt == 2:
@@ -255,6 +284,12 @@ def run(root=ROOT, token=None, organization_id=None, allow_large_decrease=False,
         exit_code = 0
     except SyncError as error:
         status.update({'result': 'blocked' if error.blocked else 'error', 'code': error.code, 'message': error.message})
+        diagnostic = getattr(api,'last_error',None)
+        if diagnostic:
+            # Detailed description stays in authorised Actions logs; public
+            # status contains only the fixed API path/parameters/error code.
+            print('Safe Eventbrite API diagnostic: '+json.dumps(diagnostic))
+            status['request'] = {key:value for key,value in diagnostic.items() if key != 'description'}
         exit_code = 2 if error.blocked else 1
     except Exception:
         status.update({'result': 'error', 'code': 'unexpected_error', 'message': 'Sync stopped unexpectedly; existing event data was not intentionally replaced.'})
