@@ -99,6 +99,8 @@ class SyncTests(unittest.TestCase):
         class Discovery(FakeAPI):
             def get(self,path,parameters):
                 if path=='/users/me/organizations/':
+                    if 'page_size' in parameters:
+                        raise SyncError('api_http_400','page_size - Unknown parameter')
                     self.calls.append((path,parameters))
                     return {'pagination':{'object_count':1,'page_number':1,'page_count':1,'has_more_items':False},'organizations':[{'id':'123'}]}
                 return super().get(path,parameters)
@@ -106,7 +108,9 @@ class SyncTests(unittest.TestCase):
         rows,_=fetch_events(api)
         self.assertEqual(len(rows),1)
         self.assertEqual(api.calls[0][0],'/users/me/organizations/')
+        self.assertEqual(api.calls[0][1],{'page':1})
         self.assertEqual(api.calls[1][0],'/organizations/123/events/')
+        self.assertEqual(api.calls[1][1]['page_size'],50)
 
     def test_incomplete_pagination_is_rejected(self):
         with self.assertRaises(SyncError):

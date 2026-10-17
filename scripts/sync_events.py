@@ -124,7 +124,9 @@ class API:
 def paginated(api, path, key, parameters=None):
     records, expected, seen = [], None, set()
     for page in range(1, 101):
-        result = api.get(path, {**(parameters or {}), 'page': page, 'page_size': 50})
+        # Page size is endpoint-specific. /users/me/organizations/ rejects it;
+        # the organisation-events endpoint documents and accepts it.
+        result = api.get(path, {**(parameters or {}), 'page': page})
         pagination, items = result.get('pagination'), result.get(key)
         if not isinstance(pagination, dict) or not isinstance(items, list):
             raise SyncError('pagination_invalid', 'Eventbrite pagination metadata or records are missing.')
@@ -203,6 +205,7 @@ def fetch_events(api, organization_id=None):
     events, ids, source_count = [], set(), 0
     for organization in organizations:
         records = paginated(api, '/organizations/' + str(organization['id']) + '/events/', 'events', {
+            'page_size': 50,
             'organizer_filter': ORGANIZER_ID, 'status': 'live,started,ended,completed,canceled',
             'show_series_parent': 'false', 'order_by': 'start_asc', 'expand': 'venue,logo'})
         source_count += len(records)
