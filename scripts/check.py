@@ -109,15 +109,12 @@ def main():
         assert "522c7db6_page=3" in page.url
         ui.append("Pagination next, previous, reload and browser history preserve query URLs and records")
         page.goto(TARGET + "/contact/", wait_until="networkidle")
-        page.locator("#Email-Address-2").fill("review@example.invalid")
-        page.locator("#Full-Name").fill("Migration verification")
-        page.locator("#field").fill("Local verification only; no delivery.")
-        page.locator('#email-form input[type="submit"]').click()
-        assert page.locator("#email-form").locator("..").locator(".w-form-fail").is_visible()
-        assert "help@analytics.org.nz" in page.locator("#email-form").locator("..").inner_text()
+        assert page.locator('#email-form').count() == 0
+        assert page.locator('a[href="mailto:hello@analytics.org.nz"]').is_visible()
+        assert page.locator('#mc-embedded-subscribe-form').count() == 1
         assert not posts, posts
-        page.screenshot(path=str(output.parent / "contact-unavailable-mobile.png"), full_page=True)
-        ui.append("Contact submission is intercepted locally with an honest unavailable message and source-published help address; no network submission")
+        page.screenshot(path=str(output.parent / "contact-email-mobile.png"), full_page=True)
+        ui.append("Contact form replaced by visible mailto:hello@analytics.org.nz; newsletter remains separate; no email sent")
         for route in ("/", "/contact/"):
             page.goto(TARGET + route, wait_until="networkidle")
             form = page.locator("#mc-embedded-subscribe-form")
@@ -128,17 +125,15 @@ def main():
         nojs = browser.new_page(ignore_https_errors=True, java_script_enabled=False, viewport={"width": 390, "height": 844})
         nojs.route("**/*", guard)
         nojs.goto(TARGET + "/contact/", wait_until="networkidle")
-        assert "Contact form delivery is unavailable" in nojs.locator("#email-form").inner_text()
-        nojs.locator("#Email-Address-2").fill("review@example.invalid")
-        nojs.locator("#Full-Name").fill("Migration verification")
-        nojs.locator('#email-form input[type="submit"]').click()
+        assert nojs.locator('#email-form').count() == 0
+        assert nojs.locator('a[href="mailto:hello@analytics.org.nz"]').is_visible()
         assert not posts, posts
         nojs.goto(TARGET + "/events/", wait_until="networkidle")
         nojs.locator('noscript a[href="' + PREFIX + '/events/page/3/"]').click()
         nojs.wait_for_load_state("networkidle")
         assert nojs.locator(".collection-list-wrapper-2 .w-dyn-item").count() == 5
         nojs.close()
-        ui.append("Without JavaScript, contact cannot transmit data and shows the help address; direct archive fallback links work")
+        ui.append("Without JavaScript the contact email link is visible and direct archive fallback links work")
         assert not unexpected_external, unexpected_external
         browser.close()
     report = {"target": TARGET, "internal_urls_checked": len(internal), "self_hosted_assets_checked": len(assets), "metadata_routes_checked": metadata_routes, "missing_assets_or_pages": missing,

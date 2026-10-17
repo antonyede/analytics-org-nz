@@ -70,6 +70,17 @@ def transform(record):
             name = profile.select_one('h3.name')
             if name and name.get_text(strip=True) == 'Antony Ede':
                 profile.decompose()
+    if urlsplit(record["url"]).path == "/contact":
+        form = soup.select_one('#email-form')
+        if form:
+            email = soup.new_tag('p', attrs={'class': 'paragraph-4 contact-email'})
+            link = soup.new_tag('a', href='mailto:hello@analytics.org.nz', attrs={'style': 'color: inherit; text-decoration: underline; overflow-wrap: anywhere;'})
+            link.string = 'hello@analytics.org.nz'
+            email.append(link)
+            form.find_parent(class_='w-form').replace_with(email)
+        for text in list(soup.find_all(string=True)):
+            if 'please use the contact form below' in text:
+                text.replace_with(text.replace('please use the contact form below', 'please email us'))
     for script in list(soup.select("script")):
         src = script.get("src", "")
         code = script.get_text()
