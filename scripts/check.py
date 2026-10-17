@@ -32,6 +32,10 @@ def main():
             assert not footer.select('.sponsored-by, a[href="https://tra.co.nz/"]'), str(file)
             assert not footer.select('img[src*="NZDatalogo-04"]'), str(file)
             assert len(footer.select('.footer-social-links-container a')) == 3, str(file)
+        if file == DOCS / 'about/index.html':
+            names = [x.get_text(strip=True) for x in soup.select('.w-dyn-item h3.name')]
+            assert 'Antony Ede' not in names and len(names) == 9, names
+            assert not soup.select('a[href="https://www.linkedin.com/in/antonyede/"]'), str(file)
         for tag in soup.select("[href], [src], [srcset]"):
             values = [tag[a] for a in ["href", "src"] if tag.get(a)]
             if tag.get("srcset"):

@@ -65,6 +65,11 @@ def transform(record):
     # privacy/social links and responsive footer geometry stay in place.
     for sponsor in soup.select('.section.footer a[href="https://tra.co.nz/"]'):
         sponsor.decompose()
+    if urlsplit(record["url"]).path == "/about":
+        for profile in soup.select('.w-dyn-item'):
+            name = profile.select_one('h3.name')
+            if name and name.get_text(strip=True) == 'Antony Ede':
+                profile.decompose()
     for script in list(soup.select("script")):
         src = script.get("src", "")
         code = script.get_text()
