@@ -2,10 +2,19 @@
   "schema_version": 1,
   "organizer_id": "18441294721",
   "organizer_url": "https://www.eventbrite.co.nz/o/nz-data-science-analytics-forum-18441294721",
-  "last_attempt_at": "2026-10-17T03:48:08.248732Z",
+  "last_attempt_at": "2026-10-17T03:53:20.445685Z",
   "last_successful_sync": null,
   "retained_synced_event_count": 0,
   "result": "error",
   "code": "api_http_400",
-  "message": "Eventbrite API returned HTTP 400; previous events retained."
+  "message": "Eventbrite API returned HTTP 400; previous events retained.",
+  "request": {
+    "http_status": 400,
+    "path": "/users/me/organizations/",
+    "parameters": {
+      "page": "1",
+      "page_size": "50"
+    },
+    "api_error": "ARGUMENTS_ERROR"
+  }
 }
