@@ -1,0 +1,26 @@
+{
+  "original_failed_run": 39000156241,
+  "diagnostic_run": 39000484090,
+  "http_status": 400,
+  "endpoint": "/v3/users/me/organizations/",
+  "rejected_parameter": {
+    "page_size": 50
+  },
+  "api_error": "ARGUMENTS_ERROR",
+  "safe_description": "page_size - Unknown parameter",
+  "fix_commit": "d31582456aafabab271cca54c1565b676d49979d",
+  "successful_sync_run": 39000586274,
+  "successful_sync_url": "https://github.com/antonyede/analytics-org-nz/actions/runs/39000586274",
+  "data_commit": "b476b33133362eebb7e2f354afc087d238851d66",
+  "pages_run": 39000619137,
+  "synced_at": "2026-10-17T03:55:13.255956Z",
+  "public_event_count": 23,
+  "upcoming": 0,
+  "past": 23,
+  "images": 19,
+  "all_ticket_urls_http_200": true,
+  "all_image_hashes_match": true,
+  "token_changed_or_retrieved": false,
+  "explicit_organization_id_needed": false,
+  "secret_or_header_dump_published": false
+}

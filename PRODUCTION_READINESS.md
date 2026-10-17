@@ -1,6 +1,6 @@
 # Production-readiness audit — 17 October 2026
 
-**The preview is deployed, but it is not ready for a production domain cutover.** Contact is now a visible `mailto:hello@analytics.org.nz` link as requested, with no contact form or website delivery backend. Mailchimp delivery and validation remain unresolved. A daily Eventbrite sync is installed but blocked pending `EVENTBRITE_TOKEN`; 25 archived events remain, with no successful API sync. No real contact or subscription request was sent. See [the current sync implementation and evidence](EVENT_SYNC.md).
+**The preview is deployed, with separate production-readiness issues still open.** Contact uses `mailto:hello@analytics.org.nz` as requested. The daily Eventbrite sync is now authenticated and verified: 23 public events and 19 images, last successful sync 17 October 2026 at 03:55:13 UTC. Mailchimp delivery/validation and inherited mobile/accessibility items remain unresolved. No contact or subscription request was sent. See [current sync implementation and evidence](EVENT_SYNC.md).
 
 Live preview: <https://antonyede.github.io/analytics-org-nz/>
 
@@ -46,11 +46,11 @@ The original source and deployed screenshots are both retained. A second source 
 | Finding | Verified state / impact | Required decision or follow-up |
 | --- | --- | --- |
 | Analytics | The source's Webflow first-party telemetry proxy and tracking initialisation are omitted. The preview does not provide the source's tracking. | Decide whether to configure analytics for the future production origin. |
-| Event “Read more” placeholder | The 2024 “Over Coming the Data Dilemma” record points to `#` on both the source and copy. It does not open event details. | Supply the correct destination, or explicitly remove/disable that event link. |
+| Historical event placeholder | The old manual archive included a `#` event link. The current public API feed replaces that manual list; all 23 current event links returned HTTP 200. | No placeholder is used in the current feed. The original source snapshot remains archived. |
 | Mobile footer | At 390 px, the inherited footer CSS produces a **1 px-high overflow-hidden container** around 45 px-high social links. The Privacy policy link is `display:none`. The source has the same issue; the sponsor removal does not cause it. | Fix mobile footer visibility/navigation before calling the mobile experience production-ready. Unrelated CSS was not altered in this requested content edit. |
 | Keyboard menu access | The inherited hamburger is a `div` with no button role or tab stop (`tabIndex = -1`). It cannot be reached through normal Tab navigation. | Add proper keyboard-accessible menu behaviour. |
 | Privacy statement | The copied statement still describes WordPress, Akismet and Wordfence, while this copy runs on GitHub Pages and omits the source tracking setup. | Update it to describe the actual hosting and data flows before cutover. |
-| CMS updates | Committee profiles remain static. Events now have a daily/manual authenticated API workflow, but the first run was blocked by missing `EVENTBRITE_TOKEN`; the original archive is clearly labelled and retained. | Add the authorised Eventbrite token as a repository Actions secret, then rerun and verify a real API feed. Until then there are no API-synced events. |
+| CMS updates | Committee profiles remain static. The daily/manual Eventbrite API workflow is working and has published 23 verified public events with 19 images. | Maintain the authorised secret and monitor the visible last-verified timestamp and workflow status. |
 | JavaScript | The original menu and animation behaviour needs JavaScript. Query-based archive selection also needs JavaScript; direct archive fallback links work without it. | Accept this behaviour or author a separate accessibility/progressive-enhancement change. |
 | Hidden template leftovers | An unused Events overlay retains placeholder links and a template mailto address inherited from the source. It is not the active menu or a form destination. | Optional cleanup after the fidelity migration review. |
 | Other browsers | Chromium is verified at the listed sizes. Safari, Firefox, other sizes and transient animation timing have not been tested. | Complete any browser support checks required for launch. |

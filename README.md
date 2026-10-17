@@ -4,24 +4,24 @@ An owner-authorised static migration of [analytics.org.nz](https://analytics.org
 
 Repository: <https://github.com/antonyede/analytics-org-nz>
 
-Live preview: <https://antonyede.github.io/analytics-org-nz/>. GitHub Pages publishes `main:/docs` on the default GitHub domain. Contact now uses the requested `hello@analytics.org.nz` email link. **Production cutover is not recommended yet:** newsletter delivery is unverified, the [daily Eventbrite sync](EVENT_SYNC.md) awaits its authorised API token, and inherited validation/mobile/accessibility issues remain.
+Live preview: <https://antonyede.github.io/analytics-org-nz/>. GitHub Pages publishes `main:/docs` on the default GitHub domain. Contact uses `hello@analytics.org.nz`; the [daily Eventbrite sync](EVENT_SYNC.md) is authenticated and working. Newsletter delivery and inherited validation/mobile/accessibility issues remain separate production-readiness items.
 
 ## What is included
 
 - The five live pages: home, Events, About, Contact, and Privacy policy.
-- All three published Events archive pages: 25 event records, with original query pagination URLs supported in the browser.
+- Three Eventbrite archive pages containing 23 verified public events, with original query pagination URLs and direct no-JavaScript pages. The original 25-row manual snapshot remains under `source/` for provenance.
 - The source's styled 404, captured from `/sitemap.xml` (which is already a 404 on the source).
 - Original responsive layouts, typography, portraits, logos, navigation, hover states and page metadata.
-- 47 referenced locally hosted assets, including original Webflow CSS/JavaScript, jQuery, HK Grotesk and Montserrat fonts. No new blanket licence is added; see [asset provenance](ASSET_RIGHTS.md).
+- 47 referenced locally hosted source assets, plus 19 verified Eventbrite images. No new blanket licence is added.
 - Original Mailchimp subscription actions and external event/profile/social links.
 - Owner-requested edits: the TRA sponsor block is removed from all footers; Antony Ede's complete About profile is removed, with the other nine profiles preserved. Both removals are enforced by the builder.
-- Contact form replaced by a visible email link; newsletter retained separately. Daily 06:17 UTC/manual Eventbrite workflow is installed with validation, safe retention and visible freshness diagnostics. At verification on 17 October 2026 its first run confirmed missing `EVENTBRITE_TOKEN`, retaining 25 archived events with 0 API-synced events. See [live sync status](https://antonyede.github.io/analytics-org-nz/event-sync-status.json) for later attempts and successes.
+- Contact form replaced by a visible email link; newsletter retained separately. Daily 06:17 UTC/manual Eventbrite workflow has validation, safe retention and freshness diagnostics. The authenticated run succeeded on 17 October 2026 at 03:55:13 UTC with 23 public events and 19 images. See [live sync status](https://antonyede.github.io/analytics-org-nz/event-sync-status.json) for later attempts.
 
 Source HTML and asset bytes are retained under `source/`; publishable files are under `docs/`. GitHub Pages can serve `main:/docs` directly, with `.nojekyll` disabling Jekyll. There is no package install or build step at deployment time and no custom domain configuration.
 
 ## Review and verification
 
-See [production readiness](PRODUCTION_READINESS.md), [the migration report](MIGRATION_REPORT.md), [deployed functional results](evidence/deployed-2026-10-17/functional.json), and [deployed screenshots](evidence/deployed-2026-10-17/README.md).
+See [current sync verification](evidence/event-sync/400-fix-live/README.md), [production readiness](PRODUCTION_READINESS.md), and [earlier migration screenshots](evidence/deployed-2026-10-17/README.md).
 
 The original local migration had **66/66 identical comparisons** before the two requested content removals. The deployed matrix also passed **66/66 comparisons against the source with only those owner edits applied**, retaining the original source captures alongside the adjusted captures. It uses ordinary headless Chromium on Linux at desktop **1440 × 1000**, tablet **834 × 1112**, and mobile **390 × 844**, with device scale factor 1. Results describe the tested conditions only.
 

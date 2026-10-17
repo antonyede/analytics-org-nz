@@ -54,6 +54,16 @@ def main():
                     actual=min(number,page_count)
                     expected=min(10,max(0,len(past)-(actual-1)*10))
                     assert page.locator('main .collection-list-wrapper-2 .w-dyn-item').count()==expected
+                    if data:
+                        expected_records=past[(actual-1)*10:actual*10]
+                        actual_links=page.locator('main .collection-list-wrapper-2 .w-dyn-item > a').evaluate_all('(xs)=>xs.map(x=>x.getAttribute("href"))')
+                        assert actual_links==[item['url'] for item in expected_records],route
+                        times=page.locator('main .collection-list-wrapper-2 .event-date time').evaluate_all('(xs)=>xs.map(x=>x.getAttribute("datetime"))')
+                        assert times==[item['start_utc'] for item in expected_records],route
+                        images=page.locator('main .collection-list-wrapper-2 .event-thumbnail').evaluate_all('(xs)=>xs.map(x=>x.getAttribute("src"))')
+                        assert images==['/analytics-org-nz/'+item['image_path'] for item in expected_records if item.get('image_path')],route
+                        assert page.locator('main .collection-list-wrapper .w-dyn-item').count()==len(upcoming)
+                        assert page.locator('.event-sync-note').get_attribute('data-last-sync')==data['synced_at']
                     assert page.locator('.event-sync-note').is_visible()
                     assert page.locator('.event-sync-note a').get_attribute('href').endswith('18441294721')
                     if not data:

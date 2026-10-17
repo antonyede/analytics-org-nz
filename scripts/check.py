@@ -7,6 +7,7 @@ from urllib.request import urlopen
 
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
+from events_view import split_events
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
@@ -25,6 +26,11 @@ def main():
     origin = parsed_target.scheme + "://" + parsed_target.netloc
     output = ROOT / args.output
     output.parent.mkdir(parents=True, exist_ok=True)
+    feed_file = ROOT / 'data/events.json'
+    past_events = split_events(json.loads(feed_file.read_text())['events'])[1] if feed_file.exists() else [None] * 25
+    page_count = max(1, (len(past_events) + 9) // 10)
+    def expected_count(number):
+        return min(10, max(0, len(past_events) - (number - 1) * 10))
     missing, internal, placeholders, external = [], set(), [], set()
     for file in sorted(DOCS.rglob("*.html")):
         soup = BeautifulSoup(file.read_text(), "html.parser")
@@ -90,23 +96,22 @@ def main():
         assert page.locator(".full-screen-menu").is_visible()
         page.locator('.full-screen-menu a[href="' + PREFIX + '/events/"]').click()
         page.wait_for_load_state("networkidle")
-        assert page.locator(".collection-list-wrapper-2 .w-dyn-item").count() == 10
+        assert page.locator(".collection-list-wrapper-2 .w-dyn-item").count() == expected_count(1)
         ui.append("Mobile menu opens and Events navigation works")
-        page.locator('a[aria-label="Next Page"]').click()
-        page.wait_for_load_state("networkidle")
-        assert "522c7db6_page=2" in page.url
-        assert "Data Governance Frameworks" in page.locator(".collection-list-wrapper-2").inner_text()
-        page.locator('a[aria-label="Next Page"]').click()
-        page.wait_for_load_state("networkidle")
-        assert "522c7db6_page=3" in page.url
-        assert page.locator(".collection-list-wrapper-2 .w-dyn-item").count() == 5
+        for number in range(2,min(3,page_count)+1):
+            page.locator('a[aria-label="Next Page"]').click()
+            page.wait_for_load_state("networkidle")
+            assert f"522c7db6_page={number}" in page.url
+            assert page.locator(".collection-list-wrapper-2 .w-dyn-item").count() == expected_count(number)
+        last_page = min(3,page_count)
         page.reload(wait_until="networkidle")
-        assert page.locator(".collection-list-wrapper-2 .w-dyn-item").count() == 5
-        page.locator('a[aria-label="Previous Page"]').click()
-        page.wait_for_load_state("networkidle")
-        assert "522c7db6_page=2" in page.url
-        page.go_back(wait_until="networkidle")
-        assert "522c7db6_page=3" in page.url
+        assert page.locator(".collection-list-wrapper-2 .w-dyn-item").count() == expected_count(last_page)
+        if last_page > 1:
+            page.locator('a[aria-label="Previous Page"]').click()
+            page.wait_for_load_state("networkidle")
+            assert f"522c7db6_page={last_page-1}" in page.url
+            page.go_back(wait_until="networkidle")
+            assert f"522c7db6_page={last_page}" in page.url
         ui.append("Pagination next, previous, reload and browser history preserve query URLs and records")
         page.goto(TARGET + "/contact/", wait_until="networkidle")
         assert page.locator('#email-form').count() == 0
@@ -129,9 +134,10 @@ def main():
         assert nojs.locator('a[href="mailto:hello@analytics.org.nz"]').is_visible()
         assert not posts, posts
         nojs.goto(TARGET + "/events/", wait_until="networkidle")
-        nojs.locator('noscript a[href="' + PREFIX + '/events/page/3/"]').click()
+        fallback = PREFIX + (f'/events/page/{last_page}/' if last_page > 1 else '/events/')
+        nojs.locator('noscript a[href="' + fallback + '"]').click()
         nojs.wait_for_load_state("networkidle")
-        assert nojs.locator(".collection-list-wrapper-2 .w-dyn-item").count() == 5
+        assert nojs.locator(".collection-list-wrapper-2 .w-dyn-item").count() == expected_count(last_page)
         nojs.close()
         ui.append("Without JavaScript the contact email link is visible and direct archive fallback links work")
         assert not unexpected_external, unexpected_external

@@ -1,0 +1,130 @@
+{
+  "target": "https://antonyede.github.io/analytics-org-nz",
+  "last_successful_sync": "2026-10-17T03:55:13.255956Z",
+  "api_count": 23,
+  "retained_archive_count": 0,
+  "screenshots": [
+    {
+      "route": "/contact/",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "file": "desktop-contact.png"
+    },
+    {
+      "route": "/events/",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "file": "desktop-events.png"
+    },
+    {
+      "route": "/events/?522c7db6_page=2",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "file": "desktop-events-page-2.png"
+    },
+    {
+      "route": "/events/?522c7db6_page=3",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "file": "desktop-events-page-3.png"
+    },
+    {
+      "route": "/about/",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "file": "desktop-about.png"
+    },
+    {
+      "route": "/contact/",
+      "viewport": [
+        834,
+        1112
+      ],
+      "file": "tablet-contact.png"
+    },
+    {
+      "route": "/events/",
+      "viewport": [
+        834,
+        1112
+      ],
+      "file": "tablet-events.png"
+    },
+    {
+      "route": "/events/?522c7db6_page=2",
+      "viewport": [
+        834,
+        1112
+      ],
+      "file": "tablet-events-page-2.png"
+    },
+    {
+      "route": "/events/?522c7db6_page=3",
+      "viewport": [
+        834,
+        1112
+      ],
+      "file": "tablet-events-page-3.png"
+    },
+    {
+      "route": "/about/",
+      "viewport": [
+        834,
+        1112
+      ],
+      "file": "tablet-about.png"
+    },
+    {
+      "route": "/contact/",
+      "viewport": [
+        390,
+        844
+      ],
+      "file": "mobile-contact.png"
+    },
+    {
+      "route": "/events/",
+      "viewport": [
+        390,
+        844
+      ],
+      "file": "mobile-events.png"
+    },
+    {
+      "route": "/events/?522c7db6_page=2",
+      "viewport": [
+        390,
+        844
+      ],
+      "file": "mobile-events-page-2.png"
+    },
+    {
+      "route": "/events/?522c7db6_page=3",
+      "viewport": [
+        390,
+        844
+      ],
+      "file": "mobile-events-page-3.png"
+    },
+    {
+      "route": "/about/",
+      "viewport": [
+        390,
+        844
+      ],
+      "file": "mobile-about.png"
+    }
+  ],
+  "errors": [],
+  "submissions": []
+}
