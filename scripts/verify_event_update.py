@@ -56,7 +56,11 @@ def main():
                     assert page.locator('main .collection-list-wrapper-2 .w-dyn-item').count()==expected
                     assert page.locator('.event-sync-note').is_visible()
                     assert page.locator('.event-sync-note a').get_attribute('href').endswith('18441294721')
-                    if not data:assert 'not connected' in page.locator('.event-sync-note').inner_text()
+                    if not data:
+                        assert 'not connected' in page.locator('.event-sync-note').inner_text()
+                        fallback=page.locator('main .collection-list-wrapper .w-dyn-empty a')
+                        assert fallback.is_visible()
+                        assert fallback.evaluate('(x)=>getComputedStyle(x).color')=='rgb(101, 101, 101)'
                 broken=page.locator('img').evaluate_all('(xs)=>xs.filter(x=>x.getClientRects().length && (!x.complete || !x.naturalWidth)).map(x=>x.src)')
                 assert not broken,broken
                 assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'),route
