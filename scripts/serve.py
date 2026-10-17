@@ -1,4 +1,5 @@
 """Preview the exact GitHub project Pages prefix without rewriting files."""
+import argparse
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -21,5 +22,8 @@ class Handler(SimpleHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    print("Preview: http://127.0.0.1:8000/analytics-org-nz/", flush=True)
-    ThreadingHTTPServer(("127.0.0.1", 8000), Handler).serve_forever()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--port', type=int, default=8000)
+    args = parser.parse_args()
+    print(f"Preview: http://127.0.0.1:{args.port}/analytics-org-nz/", flush=True)
+    ThreadingHTTPServer(("127.0.0.1", args.port), Handler).serve_forever()

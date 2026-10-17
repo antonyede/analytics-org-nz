@@ -1,0 +1,22 @@
+{
+  "observed_at": "2026-10-17T01:26:08.580604+00:00",
+  "organizer_url": "https://www.eventbrite.co.nz/o/nz-data-science-analytics-forum-18441294721",
+  "public_profile_status": 200,
+  "organizer_id": "18441294721",
+  "organizer_name": "NZ Data Science + Analytics Forum",
+  "public_total_events": 25,
+  "public_upcoming_count": 0,
+  "upcoming_failed": false,
+  "has_more_upcoming": false,
+  "past_feed_retrieved": false,
+  "rss_status": 404,
+  "rss_robots_disallowed": true,
+  "unauthenticated_api_status": 401,
+  "unauthenticated_api_error": "NO_AUTH",
+  "repository_secret_listing_status": 403,
+  "local_eventbrite_credential_available": false,
+  "access_method": "documented authenticated Eventbrite API only",
+  "authenticated_sync_count": 0,
+  "last_successful_sync": null,
+  "retained_archive_count": 25
+}

@@ -11,6 +11,7 @@ from urllib.parse import parse_qs, unquote, urljoin, urlsplit
 from urllib.request import Request, urlopen
 
 from bs4 import BeautifulSoup
+from events_view import prepare_event_pages
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "source"
@@ -148,14 +149,17 @@ def main():
     global BASE
     parser = argparse.ArgumentParser()
     parser.add_argument("--base-path", default=BASE)
+    parser.add_argument('--events-only', action='store_true')
     args = parser.parse_args()
     BASE = args.base_path.rstrip("/")
     OUT.mkdir(exist_ok=True)
     records = json.loads((SOURCE / "routes.json").read_text())["routes"]
     pages = {r["url"]: transform(r) for r in records if r["title"]}
+    variants = prepare_event_pages(pages,BASE)
     event = pages["https://analytics.org.nz/events"]
-    for number in (2, 3):
-        variant = pages[f"https://analytics.org.nz/events?522c7db6_page={number}"]
+    for number, variant in variants.items():
+        if number == 1:
+            continue
         template = event.new_tag("template", id=f"events-page-{number}")
         template.append(BeautifulSoup(str(variant.select_one("main")), "html.parser"))
         event.body.insert(4, template)
@@ -179,6 +183,8 @@ def main():
         route = urlsplit(record["url"])
         if route.query:
             continue
+        if args.events_only and route.path != '/events':
+            continue
         if record["status"] == 404:
             path = OUT / "404.html"
         else:
@@ -187,7 +193,8 @@ def main():
         path.write_text(str(pages[record["url"]]) + "\n")
     (OUT / ".nojekyll").touch()
     (OUT / "robots.txt").write_text("")
-    (ROOT / "source" / "assets.json").write_text(json.dumps(ASSETS, indent=2) + "\n")
+    if not args.events_only:
+        (ROOT / "source" / "assets.json").write_text(json.dumps(ASSETS, indent=2) + "\n")
     print(f"Built {len(pages)} captured states; self-hosted {len(ASSETS)} assets in docs/")
 
 
