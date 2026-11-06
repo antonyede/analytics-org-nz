@@ -2,12 +2,12 @@
   "schema_version": 1,
   "organizer_id": "18441294721",
   "organizer_url": "https://www.eventbrite.co.nz/o/nz-data-science-analytics-forum-18441294721",
-  "last_attempt_at": "2026-11-05T14:34:43.696593Z",
-  "last_successful_sync": "2026-11-05T14:34:45.552979Z",
-  "retained_synced_event_count": 23,
+  "last_attempt_at": "2026-11-06T14:11:58.322945Z",
+  "last_successful_sync": "2026-11-06T14:12:00.957815Z",
+  "retained_synced_event_count": 24,
   "result": "success",
   "code": "ok",
   "message": "All pages of public organiser events were verified.",
-  "public_events_verified": 23,
+  "public_events_verified": 24,
   "retries": 0
 }

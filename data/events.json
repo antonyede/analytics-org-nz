@@ -3,8 +3,8 @@
   "source": "eventbrite_api",
   "organizer_id": "18441294721",
   "organizer_url": "https://www.eventbrite.co.nz/o/nz-data-science-analytics-forum-18441294721",
-  "synced_at": "2026-11-05T14:34:45.552979Z",
-  "public_event_count": 23,
+  "synced_at": "2026-11-06T14:12:00.957815Z",
+  "public_event_count": 24,
   "events": [
     {
       "id": "57662009623",
@@ -415,6 +415,24 @@
       "city": "Wellington",
       "image_source_url": null,
       "image_path": null
+    },
+    {
+      "id": "2004418656158",
+      "organizer_id": "18441294721",
+      "name": "Rewired: AI and the Future of Data Science and Analytics Careers",
+      "url": "https://www.eventbrite.co.nz/e/rewired-ai-and-the-future-of-data-science-and-analytics-careers-tickets-2004418656158",
+      "start_utc": "2026-11-25T02:00:00Z",
+      "end_utc": "2026-11-25T05:00:00Z",
+      "timezone": "Pacific/Auckland",
+      "start_local": "2026-11-25T15:00:00+13:00",
+      "status": "live",
+      "is_free": true,
+      "online_event": false,
+      "venue": "Auckland University of Technology",
+      "city": "Auckland",
+      "image_source_url": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1197333531%2F314214693360%2F1%2Foriginal.20261105-105910?auto=format%2Ccompress&q=75&sharp=10&s=de9e6d83028c7bdd63e620f608ea4fb5",
+      "image_path": "assets/eventbrite/2004418656158-be77dcc3747a.jpg",
+      "image_sha256": "be77dcc3747afd2e940bb64252e31b4bce12ab8a06e901df83180e615f7bd9d8"
     }
   ]
 }
