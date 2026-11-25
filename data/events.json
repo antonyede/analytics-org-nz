@@ -3,7 +3,7 @@
   "source": "eventbrite_api",
   "organizer_id": "18441294721",
   "organizer_url": "https://www.eventbrite.co.nz/o/nz-data-science-analytics-forum-18441294721",
-  "synced_at": "2026-11-24T17:37:24.222722Z",
+  "synced_at": "2026-11-25T17:08:05.519190Z",
   "public_event_count": 24,
   "events": [
     {
@@ -425,7 +425,7 @@
       "end_utc": "2026-11-25T05:00:00Z",
       "timezone": "Pacific/Auckland",
       "start_local": "2026-11-25T15:00:00+13:00",
-      "status": "live",
+      "status": "completed",
       "is_free": true,
       "online_event": false,
       "venue": "Auckland University of Technology",
